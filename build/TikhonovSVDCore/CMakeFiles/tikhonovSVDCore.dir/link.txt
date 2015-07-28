@@ -1,0 +1,2 @@
+/usr/bin/ar cq libtikhonovSVDCore.a  CMakeFiles/tikhonovSVDCore.dir/TikhonovSVD.cpp.o
+/usr/bin/ranlib libtikhonovSVDCore.a

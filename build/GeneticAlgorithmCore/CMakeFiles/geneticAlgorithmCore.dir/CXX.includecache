@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp
+GeneticAlgorithm.h
+/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+vector
+-
+random
+-
+
+/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+vector
+-
+vector
+-
+

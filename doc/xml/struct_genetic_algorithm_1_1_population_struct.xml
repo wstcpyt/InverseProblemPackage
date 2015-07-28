@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="struct_genetic_algorithm_1_1_population_struct" kind="struct" language="C++" prot="private">
+    <compoundname>GeneticAlgorithm::PopulationStruct</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_genetic_algorithm_1_1_population_struct_1a466bddda46742160ef2b9c5f5aa5459f" prot="public" static="no" mutable="no">
+        <type>PopulationPropertiesType</type>
+        <definition>PopulationPropertiesType GeneticAlgorithm&lt; PopulationPropertiesType &gt;::PopulationStruct::populationProperties</definition>
+        <argsstring></argsstring>
+        <name>populationProperties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Properties (Parameter Space) for a unit in the population </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="30" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_genetic_algorithm_1_1_population_struct_1ae6c237b563e6d5e55a812cc2964dee88" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GeneticAlgorithm&lt; PopulationPropertiesType &gt;::PopulationStruct::fitness</definition>
+        <argsstring></argsstring>
+        <name>fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fitness value. Store the fitness of a unit in the population </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="34" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct for a unit in the population. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="26" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="25" bodyend="35"/>
+    <listofallmembers>
+      <member refid="struct_genetic_algorithm_1_1_population_struct_1ae6c237b563e6d5e55a812cc2964dee88" prot="public" virt="non-virtual"><scope>GeneticAlgorithm::PopulationStruct</scope><name>fitness</name></member>
+      <member refid="struct_genetic_algorithm_1_1_population_struct_1a466bddda46742160ef2b9c5f5aa5459f" prot="public" virt="non-virtual"><scope>GeneticAlgorithm::PopulationStruct</scope><name>populationProperties</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

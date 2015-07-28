@@ -1,0 +1,2 @@
+/usr/bin/ar cq libgeneticAlgorithmCore.a  CMakeFiles/geneticAlgorithmCore.dir/GeneticAlgorithm.cpp.o
+/usr/bin/ranlib libgeneticAlgorithmCore.a

@@ -1,0 +1,2 @@
+add_gmock_test(TikhonovSVDTEST TikhonovSVDTEST.cpp)
+target_link_libraries(TikhonovSVDTEST tikhonovSVDCore)

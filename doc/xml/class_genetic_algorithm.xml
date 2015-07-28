@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_genetic_algorithm" kind="class" language="C++" prot="public">
+    <compoundname>GeneticAlgorithm</compoundname>
+    <includes refid="_genetic_algorithm_8h" local="no">GeneticAlgorithm.h</includes>
+    <innerclass refid="struct_genetic_algorithm_1_1_ga_struct" prot="private">GeneticAlgorithm::GaStruct</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class PopulationPropertiesType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_genetic_algorithm_1a5518fa4926a90ae1fcbf591db9f8a4e7" prot="private" static="no">
+        <type>vector&lt; GaStruct &gt;</type>
+        <definition>typedef vector&lt;GaStruct&gt; GeneticAlgorithm&lt; PopulationPropertiesType &gt;::GaVector</definition>
+        <argsstring></argsstring>
+        <name>GaVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="38" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_genetic_algorithm_1ad172d6138f4940439ea16289cd70e862" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int GeneticAlgorithm&lt; PopulationPropertiesType &gt;::populationProperitesSize</definition>
+        <argsstring></argsstring>
+        <name>populationProperitesSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="36" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1a09d773bf12861bdee5a2a43d093abe90" prot="private" static="no" mutable="no">
+        <type>GaStruct</type>
+        <definition>GaStruct GeneticAlgorithm&lt; PopulationPropertiesType &gt;::gaStruct</definition>
+        <argsstring></argsstring>
+        <name>gaStruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="37" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1a4a108b401ccb4acff1da0b164720391a" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int GeneticAlgorithm&lt; PopulationPropertiesType &gt;::populationNumber</definition>
+        <argsstring></argsstring>
+        <name>populationNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="39" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1a788aa34b489df73b288133bd66c74c7d" prot="private" static="no" mutable="no">
+        <type>GaVector</type>
+        <definition>GaVector GeneticAlgorithm&lt; PopulationPropertiesType &gt;::population</definition>
+        <argsstring></argsstring>
+        <name>population</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="40" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1ae178db2f895264d9b11215446ebe4784" prot="private" static="no" mutable="no">
+        <type>GaVector</type>
+        <definition>GaVector GeneticAlgorithm&lt; PopulationPropertiesType &gt;::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="41" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1aeb24ab6125f42f98f22380ceea85759f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GeneticAlgorithm&lt; PopulationPropertiesType &gt;::randomMin</definition>
+        <argsstring></argsstring>
+        <name>randomMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="42" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1aa3f83bd79dd5a52f668ea18be402a123" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GeneticAlgorithm&lt; PopulationPropertiesType &gt;::randMax</definition>
+        <argsstring></argsstring>
+        <name>randMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="42" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1ae8cead9754b3aff5c357e7734724e33b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GeneticAlgorithm&lt; PopulationPropertiesType &gt;::randBase</definition>
+        <argsstring></argsstring>
+        <name>randBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="43" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_genetic_algorithm_1a9ee5cb78bbc30596bceccb14143ec8e8" prot="public" static="no" mutable="no">
+        <type>GaVector *</type>
+        <definition>GaVector* GeneticAlgorithm&lt; PopulationPropertiesType &gt;::populationP</definition>
+        <argsstring></argsstring>
+        <name>populationP</name>
+        <briefdescription>
+<para>Population Pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>A GaVector pointer point to the population member.</para><para>GaVector is actually an alias that define by <computeroutput>typedef</computeroutput> to replace <computeroutput>vector&lt;GaStruct&gt;</computeroutput>. <verbatim>embed:rst
+.. code-block:: c
+
+  typedef vector&lt;GaStruct&gt; GaVector;
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="88" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_genetic_algorithm_1a74fdd6b9b2303018db89e0ad0eb77f02" prot="public" static="no" mutable="no">
+        <type>GaVector *</type>
+        <definition>GaVector* GeneticAlgorithm&lt; PopulationPropertiesType &gt;::bufferP</definition>
+        <argsstring></argsstring>
+        <name>bufferP</name>
+        <briefdescription>
+<para>Buffer Pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>A GaVector pointer pouint to the buffer member. Buffer with GaVector type serve as a temporary buffer layer to store population. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="94" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_genetic_algorithm_1a42ff3734cadb8b9d94af72122872b358" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GeneticAlgorithm&lt; PopulationPropertiesType &gt;::GeneticAlgorithm</definition>
+        <argsstring>(PopulationPropertiesType population_properties, unsigned int population_number)</argsstring>
+        <name>GeneticAlgorithm</name>
+        <param>
+          <type>PopulationPropertiesType</type>
+          <declname>population_properties</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>population_number</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for <ref refid="class_genetic_algorithm" kindref="compound">GeneticAlgorithm</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+<para><bold>Example:</bold></para><para>The following is used to create a geneticAlgoritm object with a populationProperties of <computeroutput>vector&lt;double&gt;</computeroutput> type and the number of units in the whole population is 1000. <verbatim>embed:rst
+.. code-block:: c
+
+  #include &lt;vector&gt;
+  using namespace std;
+  vector&lt;double&gt; populationProperties (10, 0.0);
+  int populationNumber = 1000;
+  GeneticAlgoritm&lt;vector&lt;double&gt;&gt; geneticAlgoritm(populationProperties, populationNumber);
+</verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>population_properties</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Properties (Parameter Space) for a unit in the population. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>population_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of units in the whole population. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="64" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="12" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a8bb058aba83980d2fd30d414e45997dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const GaStruct &amp;</type>
+        <definition>const GaStruct&amp; GeneticAlgorithm&lt; PopulationPropertiesType &gt;::getGaStruct</definition>
+        <argsstring>() const </argsstring>
+        <name>getGaStruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="66" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a91ce55acdb3c19f5a7047396501c691f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int GeneticAlgorithm&lt; PopulationPropertiesType &gt;::getPopulationNumber</definition>
+        <argsstring>() const </argsstring>
+        <name>getPopulationNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="70" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a2ea232269a4a14fd8f6a90e56258c951" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int GeneticAlgorithm&lt; PopulationPropertiesType &gt;::getPopulationproperitessize</definition>
+        <argsstring>() const </argsstring>
+        <name>getPopulationproperitessize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="74" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1ae6646f697b05f35182dad2a32875c8c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::initPopulation</definition>
+        <argsstring>(double rand_min, double rand_max, double rand_base)</argsstring>
+        <name>initPopulation</name>
+        <param>
+          <type>double</type>
+          <declname>rand_min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rand_max</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rand_base</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the population group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Every Properties for the unit in the population group will initialize with a random number. The random number will generate in the following way: <verbatim>embed:rst
+.. code-block:: c
+
+  double fraction = (double)(rand() % int(rand_base) / rand_base);
+  double randomNumber = rand_min + fraction * (rand_max - rand_min);
+</verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rand_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random number lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rand_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random number upper bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rand_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random number generation base. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="111" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="28" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a8d74e4e771fdc7ee9d3af0f8a51cdef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::sortByFitness</definition>
+        <argsstring>()</argsstring>
+        <name>sortByFitness</name>
+        <briefdescription>
+<para>Sort the population by the fitness of the unit from low to high. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="113" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a68302fdc33d694ce97b93a6d48d83181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::mate</definition>
+        <argsstring>(double elitrate, double mutationrate)</argsstring>
+        <name>mate</name>
+        <param>
+          <type>double</type>
+          <declname>elitrate</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>mutationrate</declname>
+        </param>
+        <briefdescription>
+<para>Generate next generation of population by mutation and crossover. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elitrate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>elitism rate of the Genetic Algorithm. Elitism unit is the unit directly transfer to the next generation without mutation and crossover. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutationrate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rate for the Mutation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="120" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="52" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_genetic_algorithm_1a0c9d79cd0b296f4761cbf88b2b80480b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double GeneticAlgorithm&lt; PopulationPropertiesType &gt;::doubleRand</definition>
+        <argsstring>(double rand_min, double rand_max)</argsstring>
+        <name>doubleRand</name>
+        <param>
+          <type>double</type>
+          <declname>rand_min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rand_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="123" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a4794372439fa5932fedda37b51bdec78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::eltism</definition>
+        <argsstring>(int e_size)</argsstring>
+        <name>eltism</name>
+        <param>
+          <type>int</type>
+          <declname>e_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="124" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="76" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1acb26279b5d6594444b7f0e248a659aaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::mutate</definition>
+        <argsstring>(GaStruct &amp;mutatemember)</argsstring>
+        <name>mutate</name>
+        <param>
+          <type>GaStruct &amp;</type>
+          <declname>mutatemember</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="125" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_genetic_algorithm_1a027b39ebaa7777476e1f0a5582ca2d91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneticAlgorithm&lt; PopulationPropertiesType &gt;::swap</definition>
+        <argsstring>()</argsstring>
+        <name>swap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="126" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp" bodystart="90" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Main Class for Genetic Algorithm. </para>    </briefdescription>
+    <detaileddescription>
+<para>It has a population group which is easy to initialize. We also make it easy to do crossover and mutation in the population group.</para><para>Genetic Algorithm is a class template. You can create the class accroding to different kind of properties type of the unit in the population.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PopulationPropertiesType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of populationProperties. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>vector&lt; GaStruct &gt;</label>
+      </node>
+      <node id="3">
+        <label>GeneticAlgorithm&lt; PopulationPropertiesType &gt;</label>
+        <link refid="class_genetic_algorithm"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>bufferP</edgelabel>
+          <edgelabel>populationP</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" line="23" column="1" bodyfile="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h" bodystart="23" bodyend="127"/>
+    <listofallmembers>
+      <member refid="class_genetic_algorithm_1ae178db2f895264d9b11215446ebe4784" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>buffer</name></member>
+      <member refid="class_genetic_algorithm_1a74fdd6b9b2303018db89e0ad0eb77f02" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>bufferP</name></member>
+      <member refid="class_genetic_algorithm_1a0c9d79cd0b296f4761cbf88b2b80480b" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>doubleRand</name></member>
+      <member refid="class_genetic_algorithm_1a4794372439fa5932fedda37b51bdec78" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>eltism</name></member>
+      <member refid="class_genetic_algorithm_1a09d773bf12861bdee5a2a43d093abe90" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>gaStruct</name></member>
+      <member refid="class_genetic_algorithm_1a5518fa4926a90ae1fcbf591db9f8a4e7" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>GaVector</name></member>
+      <member refid="class_genetic_algorithm_1a42ff3734cadb8b9d94af72122872b358" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>GeneticAlgorithm</name></member>
+      <member refid="class_genetic_algorithm_1a8bb058aba83980d2fd30d414e45997dd" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>getGaStruct</name></member>
+      <member refid="class_genetic_algorithm_1a91ce55acdb3c19f5a7047396501c691f" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>getPopulationNumber</name></member>
+      <member refid="class_genetic_algorithm_1a2ea232269a4a14fd8f6a90e56258c951" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>getPopulationproperitessize</name></member>
+      <member refid="class_genetic_algorithm_1ae6646f697b05f35182dad2a32875c8c9" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>initPopulation</name></member>
+      <member refid="class_genetic_algorithm_1a68302fdc33d694ce97b93a6d48d83181" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>mate</name></member>
+      <member refid="class_genetic_algorithm_1acb26279b5d6594444b7f0e248a659aaa" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>mutate</name></member>
+      <member refid="class_genetic_algorithm_1a788aa34b489df73b288133bd66c74c7d" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>population</name></member>
+      <member refid="class_genetic_algorithm_1a4a108b401ccb4acff1da0b164720391a" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>populationNumber</name></member>
+      <member refid="class_genetic_algorithm_1a9ee5cb78bbc30596bceccb14143ec8e8" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>populationP</name></member>
+      <member refid="class_genetic_algorithm_1ad172d6138f4940439ea16289cd70e862" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>populationProperitesSize</name></member>
+      <member refid="class_genetic_algorithm_1ae8cead9754b3aff5c357e7734724e33b" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>randBase</name></member>
+      <member refid="class_genetic_algorithm_1aa3f83bd79dd5a52f668ea18be402a123" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>randMax</name></member>
+      <member refid="class_genetic_algorithm_1aeb24ab6125f42f98f22380ceea85759f" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>randomMin</name></member>
+      <member refid="class_genetic_algorithm_1a8d74e4e771fdc7ee9d3af0f8a51cdef9" prot="public" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>sortByFitness</name></member>
+      <member refid="class_genetic_algorithm_1a027b39ebaa7777476e1f0a5582ca2d91" prot="private" virt="non-virtual"><scope>GeneticAlgorithm</scope><name>swap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

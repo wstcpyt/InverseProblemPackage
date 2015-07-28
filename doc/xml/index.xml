@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="struct_genetic_algorithm_1_1_ga_struct" kind="struct"><name>GeneticAlgorithm::GaStruct</name>
+    <member refid="struct_genetic_algorithm_1_1_ga_struct_1a5a4a77d8efad5eaf5be85bd75cd4433d" kind="variable"><name>populationProperties</name></member>
+    <member refid="struct_genetic_algorithm_1_1_ga_struct_1a77dc30c84853ffb6f9f8f3ec80701413" kind="variable"><name>fitness</name></member>
+  </compound>
+  <compound refid="class_genetic_algorithm" kind="class"><name>GeneticAlgorithm</name>
+    <member refid="class_genetic_algorithm_1a5518fa4926a90ae1fcbf591db9f8a4e7" kind="typedef"><name>GaVector</name></member>
+    <member refid="class_genetic_algorithm_1ad172d6138f4940439ea16289cd70e862" kind="variable"><name>populationProperitesSize</name></member>
+    <member refid="class_genetic_algorithm_1a09d773bf12861bdee5a2a43d093abe90" kind="variable"><name>gaStruct</name></member>
+    <member refid="class_genetic_algorithm_1a4a108b401ccb4acff1da0b164720391a" kind="variable"><name>populationNumber</name></member>
+    <member refid="class_genetic_algorithm_1a788aa34b489df73b288133bd66c74c7d" kind="variable"><name>population</name></member>
+    <member refid="class_genetic_algorithm_1ae178db2f895264d9b11215446ebe4784" kind="variable"><name>buffer</name></member>
+    <member refid="class_genetic_algorithm_1aeb24ab6125f42f98f22380ceea85759f" kind="variable"><name>randomMin</name></member>
+    <member refid="class_genetic_algorithm_1aa3f83bd79dd5a52f668ea18be402a123" kind="variable"><name>randMax</name></member>
+    <member refid="class_genetic_algorithm_1ae8cead9754b3aff5c357e7734724e33b" kind="variable"><name>randBase</name></member>
+    <member refid="class_genetic_algorithm_1a9ee5cb78bbc30596bceccb14143ec8e8" kind="variable"><name>populationP</name></member>
+    <member refid="class_genetic_algorithm_1a74fdd6b9b2303018db89e0ad0eb77f02" kind="variable"><name>bufferP</name></member>
+    <member refid="class_genetic_algorithm_1a42ff3734cadb8b9d94af72122872b358" kind="function"><name>GeneticAlgorithm</name></member>
+    <member refid="class_genetic_algorithm_1a8bb058aba83980d2fd30d414e45997dd" kind="function"><name>getGaStruct</name></member>
+    <member refid="class_genetic_algorithm_1a91ce55acdb3c19f5a7047396501c691f" kind="function"><name>getPopulationNumber</name></member>
+    <member refid="class_genetic_algorithm_1a2ea232269a4a14fd8f6a90e56258c951" kind="function"><name>getPopulationproperitessize</name></member>
+    <member refid="class_genetic_algorithm_1ae6646f697b05f35182dad2a32875c8c9" kind="function"><name>initPopulation</name></member>
+    <member refid="class_genetic_algorithm_1a8d74e4e771fdc7ee9d3af0f8a51cdef9" kind="function"><name>sortByFitness</name></member>
+    <member refid="class_genetic_algorithm_1a68302fdc33d694ce97b93a6d48d83181" kind="function"><name>mate</name></member>
+    <member refid="class_genetic_algorithm_1a0c9d79cd0b296f4761cbf88b2b80480b" kind="function"><name>doubleRand</name></member>
+    <member refid="class_genetic_algorithm_1a4794372439fa5932fedda37b51bdec78" kind="function"><name>eltism</name></member>
+    <member refid="class_genetic_algorithm_1acb26279b5d6594444b7f0e248a659aaa" kind="function"><name>mutate</name></member>
+    <member refid="class_genetic_algorithm_1a027b39ebaa7777476e1f0a5582ca2d91" kind="function"><name>swap</name></member>
+  </compound>
+  <compound refid="_genetic_algorithm_8cpp" kind="file"><name>GeneticAlgorithm.cpp</name>
+  </compound>
+  <compound refid="_genetic_algorithm_8h" kind="file"><name>GeneticAlgorithm.h</name>
+  </compound>
+  <compound refid="dir_dbc1e06650620e1deaad414ef736c6a9" kind="dir"><name>/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore</name>
+  </compound>
+</doxygenindex>

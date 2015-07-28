@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_dbc1e06650620e1deaad414ef736c6a9" kind="dir">
+    <compoundname>/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore</compoundname>
+    <innerfile refid="_genetic_algorithm_8cpp">GeneticAlgorithm.cpp</innerfile>
+    <innerfile refid="_genetic_algorithm_8h">GeneticAlgorithm.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/"/>
+  </compounddef>
+</doxygen>

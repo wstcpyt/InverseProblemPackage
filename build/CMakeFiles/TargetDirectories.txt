@@ -1,0 +1,9 @@
+/Users/yutongpang/ClionProjects/InverseProblem/build/TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/gtest/CMakeFiles/gtest.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/CMakeFiles/gmock.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/gtest/CMakeFiles/gtest_main.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles/InverseProblem.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/CMakeFiles/gmock_main.dir
+/Users/yutongpang/ClionProjects/InverseProblem/build/GeneticAlgorithmCore/CMakeFiles/geneticAlgorithmCore.dir

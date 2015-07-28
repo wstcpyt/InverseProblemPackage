@@ -1,0 +1,172 @@
+\hypertarget{class_genetic_algorithm}{}\section{Genetic\+Algorithm$<$ Population\+Properties\+Type $>$ Class Template Reference}
+\label{class_genetic_algorithm}\index{Genetic\+Algorithm$<$ Population\+Properties\+Type $>$@{Genetic\+Algorithm$<$ Population\+Properties\+Type $>$}}
+
+
+Main Class for Genetic Algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Genetic\+Algorithm.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_genetic_algorithm_a42ff3734cadb8b9d94af72122872b358}{Genetic\+Algorithm} (Population\+Properties\+Type population\+\_\+properties, unsigned int population\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{class_genetic_algorithm}{Genetic\+Algorithm} class. \end{DoxyCompactList}\item 
+const Ga\+Struct \& {\bfseries get\+Ga\+Struct} () const \hypertarget{class_genetic_algorithm_a8bb058aba83980d2fd30d414e45997dd}{}\label{class_genetic_algorithm_a8bb058aba83980d2fd30d414e45997dd}
+
+\item 
+unsigned int {\bfseries get\+Population\+Number} () const \hypertarget{class_genetic_algorithm_a91ce55acdb3c19f5a7047396501c691f}{}\label{class_genetic_algorithm_a91ce55acdb3c19f5a7047396501c691f}
+
+\item 
+unsigned int {\bfseries get\+Populationproperitessize} () const \hypertarget{class_genetic_algorithm_a2ea232269a4a14fd8f6a90e56258c951}{}\label{class_genetic_algorithm_a2ea232269a4a14fd8f6a90e56258c951}
+
+\item 
+void \hyperlink{class_genetic_algorithm_ae6646f697b05f35182dad2a32875c8c9}{init\+Population} (double rand\+\_\+min, double rand\+\_\+max, double rand\+\_\+base)
+\begin{DoxyCompactList}\small\item\em Initialize the population group. \end{DoxyCompactList}\item 
+void \hyperlink{class_genetic_algorithm_a8d74e4e771fdc7ee9d3af0f8a51cdef9}{sort\+By\+Fitness} ()\hypertarget{class_genetic_algorithm_a8d74e4e771fdc7ee9d3af0f8a51cdef9}{}\label{class_genetic_algorithm_a8d74e4e771fdc7ee9d3af0f8a51cdef9}
+
+\begin{DoxyCompactList}\small\item\em Sort the population by the fitness of the unit from low to high. \end{DoxyCompactList}\item 
+void \hyperlink{class_genetic_algorithm_a68302fdc33d694ce97b93a6d48d83181}{mate} (double elitrate, double mutationrate)
+\begin{DoxyCompactList}\small\item\em Generate next generation of population by mutation and crossover. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ga\+Vector $\ast$ \hyperlink{class_genetic_algorithm_a9ee5cb78bbc30596bceccb14143ec8e8}{populationP}
+\begin{DoxyCompactList}\small\item\em Population Pointer. \end{DoxyCompactList}\item 
+Ga\+Vector $\ast$ \hyperlink{class_genetic_algorithm_a74fdd6b9b2303018db89e0ad0eb77f02}{bufferP}
+\begin{DoxyCompactList}\small\item\em Buffer Pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Population\+Properties\+Type$>$class Genetic\+Algorithm$<$ Population\+Properties\+Type $>$}
+
+Main Class for Genetic Algorithm. 
+
+It has a population group which is easy to initialize. We also make it easy to do crossover and mutation in the population group.
+
+Genetic Algorithm is a class template. You can create the class accroding to different kind of properties type of the unit in the population.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Population\+Properties\+Type} & the type of population\+Properties. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Genetic\+Algorithm@{Genetic\+Algorithm}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\index{Genetic\+Algorithm@{Genetic\+Algorithm}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\subsubsection[{Genetic\+Algorithm(\+Population\+Properties\+Type population\+\_\+properties, unsigned int population\+\_\+number)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Population\+Properties\+Type $>$ {\bf Genetic\+Algorithm}$<$ Population\+Properties\+Type $>$\+::{\bf Genetic\+Algorithm} (
+\begin{DoxyParamCaption}
+\item[{Population\+Properties\+Type}]{population\+\_\+properties, }
+\item[{unsigned int}]{population\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{class_genetic_algorithm_a42ff3734cadb8b9d94af72122872b358}{}\label{class_genetic_algorithm_a42ff3734cadb8b9d94af72122872b358}
+
+
+Constructor for \hyperlink{class_genetic_algorithm}{Genetic\+Algorithm} class. 
+
+{\bfseries Example\+:}
+
+The following is used to create a genetic\+Algoritm object with a population\+Properties of {\ttfamily vector$<$double$>$} type and the number of units in the whole population is 1000. \begin{DoxyVerb}embed:rst
+.. code-block:: c
+
+  #include <vector>
+  using namespace std;
+  vector<double> populationProperties (10, 0.0);
+  int populationNumber = 1000;
+  GeneticAlgoritm<vector<double>> geneticAlgoritm(populationProperties, populationNumber);
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em population\+\_\+properties} & Properties (Parameter Space) for a unit in the population. \\
+\hline
+{\em population\+\_\+number} & Number of units in the whole population. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Genetic\+Algorithm@{Genetic\+Algorithm}!init\+Population@{init\+Population}}
+\index{init\+Population@{init\+Population}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\subsubsection[{init\+Population(double rand\+\_\+min, double rand\+\_\+max, double rand\+\_\+base)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Population\+Properties\+Type $>$ void {\bf Genetic\+Algorithm}$<$ Population\+Properties\+Type $>$\+::init\+Population (
+\begin{DoxyParamCaption}
+\item[{double}]{rand\+\_\+min, }
+\item[{double}]{rand\+\_\+max, }
+\item[{double}]{rand\+\_\+base}
+\end{DoxyParamCaption}
+)}\hypertarget{class_genetic_algorithm_ae6646f697b05f35182dad2a32875c8c9}{}\label{class_genetic_algorithm_ae6646f697b05f35182dad2a32875c8c9}
+
+
+Initialize the population group. 
+
+Every Properties for the unit in the population group will initialize with a random number. The random number will generate in the following way\+: \begin{DoxyVerb}embed:rst
+.. code-block:: c
+
+  double fraction = (double)(rand() % int(rand_base) / rand_base);
+  double randomNumber = rand_min + fraction * (rand_max - rand_min);
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\+\_\+min} & Random number lower bound. \\
+\hline
+{\em rand\+\_\+max} & Random number upper bound. \\
+\hline
+{\em rand\+\_\+base} & Random number generation base. \\
+\hline
+\end{DoxyParams}
+\index{Genetic\+Algorithm@{Genetic\+Algorithm}!mate@{mate}}
+\index{mate@{mate}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\subsubsection[{mate(double elitrate, double mutationrate)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Population\+Properties\+Type $>$ void {\bf Genetic\+Algorithm}$<$ Population\+Properties\+Type $>$\+::mate (
+\begin{DoxyParamCaption}
+\item[{double}]{elitrate, }
+\item[{double}]{mutationrate}
+\end{DoxyParamCaption}
+)}\hypertarget{class_genetic_algorithm_a68302fdc33d694ce97b93a6d48d83181}{}\label{class_genetic_algorithm_a68302fdc33d694ce97b93a6d48d83181}
+
+
+Generate next generation of population by mutation and crossover. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elitrate} & elitism rate of the Genetic Algorithm. Elitism unit is the unit directly transfer to the next generation without mutation and crossover. \\
+\hline
+{\em mutationrate} & Rate for the Mutation. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{Genetic\+Algorithm@{Genetic\+Algorithm}!bufferP@{bufferP}}
+\index{bufferP@{bufferP}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\subsubsection[{bufferP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Population\+Properties\+Type $>$ Ga\+Vector$\ast$ {\bf Genetic\+Algorithm}$<$ Population\+Properties\+Type $>$\+::bufferP}\hypertarget{class_genetic_algorithm_a74fdd6b9b2303018db89e0ad0eb77f02}{}\label{class_genetic_algorithm_a74fdd6b9b2303018db89e0ad0eb77f02}
+
+
+Buffer Pointer. 
+
+A Ga\+Vector pointer pouint to the buffer member. Buffer with Ga\+Vector type serve as a temporary buffer layer to store population. \index{Genetic\+Algorithm@{Genetic\+Algorithm}!populationP@{populationP}}
+\index{populationP@{populationP}!Genetic\+Algorithm@{Genetic\+Algorithm}}
+\subsubsection[{populationP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Population\+Properties\+Type $>$ Ga\+Vector$\ast$ {\bf Genetic\+Algorithm}$<$ Population\+Properties\+Type $>$\+::populationP}\hypertarget{class_genetic_algorithm_a9ee5cb78bbc30596bceccb14143ec8e8}{}\label{class_genetic_algorithm_a9ee5cb78bbc30596bceccb14143ec8e8}
+
+
+Population Pointer. 
+
+A Ga\+Vector pointer point to the population member.
+
+Ga\+Vector is actually an alias that define by {\ttfamily typedef} to replace {\ttfamily vector$<$Ga\+Struct$>$}. \begin{DoxyVerb}embed:rst
+.. code-block:: c
+
+  typedef vector<GaStruct> GaVector;
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yutongpang/\+Clion\+Projects/\+Inverse\+Problem/\+Genetic\+Algorithm\+Core/Genetic\+Algorithm.\+h\item 
+/\+Users/yutongpang/\+Clion\+Projects/\+Inverse\+Problem/\+Genetic\+Algorithm\+Core/Genetic\+Algorithm.\+cpp\end{DoxyCompactItemize}
