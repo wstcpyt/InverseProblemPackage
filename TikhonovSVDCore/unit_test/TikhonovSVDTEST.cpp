@@ -24,4 +24,3 @@ TEST_F(TikhonovSVDTEST, TikhonovSVD_Constructor){
     TikhonovSVD tikhonovSVD(AMatrix, bVector);
     ASSERT_THAT(tikhonovSVD.XTikhonovSVD->size, MATRIXSIZE);
 }
-

@@ -56,7 +56,8 @@ CMAKE_BINARY_DIR = /Users/yutongpang/ClionProjects/InverseProblem/build
 # Target rules for target CMakeFiles/InverseProblem.dir
 
 # All Build rule for target.
-CMakeFiles/InverseProblem.dir/all:
+CMakeFiles/InverseProblem.dir/all: TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir/all
+CMakeFiles/InverseProblem.dir/all: GeneticAlgorithmCore/CMakeFiles/geneticAlgorithmCore.dir/all
 	$(MAKE) -f CMakeFiles/InverseProblem.dir/build.make CMakeFiles/InverseProblem.dir/depend
 	$(MAKE) -f CMakeFiles/InverseProblem.dir/build.make CMakeFiles/InverseProblem.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles  2
@@ -69,7 +70,7 @@ all: CMakeFiles/InverseProblem.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/InverseProblem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/InverseProblem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles 0
 .PHONY : CMakeFiles/InverseProblem.dir/rule
@@ -334,8 +335,8 @@ GeneticAlgorithmCore/unit_test/preinstall:
 # Target rules for target GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir
 
 # All Build rule for target.
-GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/all: gmock/CMakeFiles/gmock_main.dir/all
 GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/all: GeneticAlgorithmCore/CMakeFiles/geneticAlgorithmCore.dir/all
+GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/all: gmock/CMakeFiles/gmock_main.dir/all
 	$(MAKE) -f GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/build.make GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/depend
 	$(MAKE) -f GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/build.make GeneticAlgorithmCore/unit_test/CMakeFiles/GeneticAlgorithmTest.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles  1
@@ -437,8 +438,8 @@ TikhonovSVDCore/unit_test/preinstall:
 # Target rules for target TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir
 
 # All Build rule for target.
-TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/all: gmock/CMakeFiles/gmock_main.dir/all
 TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/all: TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir/all
+TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/all: gmock/CMakeFiles/gmock_main.dir/all
 	$(MAKE) -f TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/build.make TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/depend
 	$(MAKE) -f TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/build.make TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles  3

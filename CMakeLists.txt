@@ -20,6 +20,8 @@ target_link_libraries(InverseProblem ${gsl_LIBRARIES})
 
 add_subdirectory(GeneticAlgorithmCore)
 add_subdirectory(TikhonovSVDCore)
+add_subdirectory(VisualCore)
 
 target_link_libraries(InverseProblem geneticAlgorithmCore)
 target_link_libraries(InverseProblem tikhonovSVDCore)
+target_link_libraries(InverseProblem visualCore)

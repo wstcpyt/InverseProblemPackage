@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "VisualCore/LineChart.h"
 #include "GeneticAlgorithmCore/GeneticAlgorithm.h"
 #include "TikhonovSVDCore/TikhonovSVD.h"
 #include <gsl/gsl_vector.h>
@@ -7,7 +8,7 @@
 #include <gsl/gsl_blas.h>
 #include <math.h>
 #define MATRIXSIZE 40
-#define GA_POPSIZE 100
+#define GA_POPSIZE 200
 #define d 0.25f
 
 using namespace std;
@@ -50,6 +51,26 @@ private:
                 gsl_vector_set (fexact, i, 1);
             }
         }
+    }
+    void plotfexact(){
+        vector<double> x(MATRIXSIZE);
+        vector<double> y(MATRIXSIZE);
+        LineChart lineChart;
+        for (int i = 0; i < MATRIXSIZE; i++){
+            x[i] = i;
+            y[i] = gsl_vector_get(fexact, i);
+        }
+        lineChart.drawchart(x, y,  1);
+    }
+    void plotbexact(){
+        vector<double> x(MATRIXSIZE);
+        vector<double> y(MATRIXSIZE);
+        LineChart lineChart;
+        for (int i = 0; i < MATRIXSIZE; i++){
+            x[i] = i;
+            y[i] = gsl_vector_get(b, i);
+        }
+        lineChart.drawchart(x, y,  1);
     }
     void calculateb(){
         gsl_blas_dgemv(CblasNoTrans, 1.0, A, fexact, 0.0, b);
@@ -102,6 +123,36 @@ void geneticSVDcalculation(){
         geneticAlgorithm.mate(0.1, 0.2);
     }
 }
+
+void getBestFitLambdaValue(GeoMeasure& geoMeasure){
+    vector<double> lambdasweep {1E-16, 1E-15, 1E-14, 1E-13, 1E-12, 1E-11, 1E-10, 1E-9, 1E-8, 1E-7, 1E-6, 1E-5, 1E-4, 1E-3, 1E-2, 1E-1, 1};
+    size_t lambdasize = lambdasweep.size();
+    vector<double> gValuearray (lambdasize, 0.0);
+    for (int k = 0; k < lambdasize; k++){
+        TikhonovSVD tikhonovSVD(geoMeasure.A, geoMeasure.b);
+        tikhonovSVD.getXtikhonovSVD(lambdasweep[k]);
+        double Gvalue = tikhonovSVD.getGCVValue(geoMeasure.A,geoMeasure.b, tikhonovSVD.XTikhonovSVD);
+        gValuearray[k] = Gvalue ;
+    }
+    LineChart lineChart;
+    lineChart.drawchart(lambdasweep, gValuearray, 1);
+
+}
+
+void reconstruct(){
+    GeoMeasure geoMeasure(0.2, 0 , 0);
+    TikhonovSVD tikhonovSVD(geoMeasure.A, geoMeasure.b);
+    tikhonovSVD.getXtikhonovSVD(1E-12);
+    LineChart lineChart;
+    vector<double> x(MATRIXSIZE);
+    vector<double> y(MATRIXSIZE);
+    for (int i = 0; i < MATRIXSIZE; i++){
+        x[i] = i;
+        y[i] = gsl_vector_get(tikhonovSVD.XTikhonovSVD, i);
+    }
+    lineChart.drawchart(x, y, 1);
+}
+
 
 int main() {
     geneticSVDcalculation();

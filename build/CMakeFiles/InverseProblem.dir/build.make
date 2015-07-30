@@ -81,6 +81,8 @@ InverseProblem_EXTERNAL_OBJECTS =
 
 InverseProblem: CMakeFiles/InverseProblem.dir/main.cpp.o
 InverseProblem: CMakeFiles/InverseProblem.dir/build.make
+InverseProblem: GeneticAlgorithmCore/libgeneticAlgorithmCore.a
+InverseProblem: TikhonovSVDCore/libtikhonovSVDCore.a
 InverseProblem: CMakeFiles/InverseProblem.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable InverseProblem"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/InverseProblem.dir/link.txt --verbose=$(VERBOSE)
