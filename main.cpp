@@ -8,7 +8,7 @@
 #include <gsl/gsl_blas.h>
 #include <math.h>
 #define MATRIXSIZE 40
-#define GA_POPSIZE 2000
+#define GA_POPSIZE 200
 #define d 0.25f
 
 using namespace std;
@@ -74,7 +74,6 @@ private:
     }
     void calculateb(){
         gsl_blas_dgemv(CblasNoTrans, 1.0, A, fexact, 0.0, b);
-        gsl_vector_set(b, 0, -0.2 + gsl_vector_get(b, 0));
         gsl_vector_set(b, 0, b0d + gsl_vector_get(b, 0));
         gsl_vector_set(b, 1, b1d + gsl_vector_get(b, 1));
         gsl_vector_set(b, 2, b2d + gsl_vector_get(b, 2));
@@ -114,7 +113,7 @@ public:
 void geneticSVDcalculation(){
     vector<double> populationproperties(3, 0.0);
     GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
-    geneticAlgorithm.initPopulation(-1, 1, 100);
+    geneticAlgorithm.initPopulation(-0.1, 0.1, 100);
     FitessSVDFunc fitessSVDFunc;
     for (int i =0; i < 10000; i++) {
         fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
