@@ -74,6 +74,7 @@ private:
     }
     void calculateb(){
         gsl_blas_dgemv(CblasNoTrans, 1.0, A, fexact, 0.0, b);
+        gsl_vector_set(b, 0, -0.2 + gsl_vector_get(b, 0));
         gsl_vector_set(b, 0, b0d + gsl_vector_get(b, 0));
         gsl_vector_set(b, 1, b1d + gsl_vector_get(b, 1));
         gsl_vector_set(b, 2, b2d + gsl_vector_get(b, 2));
@@ -113,7 +114,7 @@ public:
 void geneticSVDcalculation(){
     vector<double> populationproperties(3, 0.0);
     GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
-    geneticAlgorithm.initPopulation(-0.1, 0.1, 100);
+    geneticAlgorithm.initPopulation(-1, 1, 100);
     FitessSVDFunc fitessSVDFunc;
     for (int i =0; i < 10000; i++) {
         fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
@@ -152,8 +153,52 @@ void reconstruct(){
     lineChart.drawchart(x, y, 1);
 }
 
+void distributedGeneticAlgorithm(){
+    vector<GeneticAlgorithm<vector<double>>*> geneticworld = {};
+    for (int world = 0; world < 5; world++){
+        cout << "world:" + to_string(world) << endl;
+        vector<double> populationproperties(3, 0.0);
+        GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
+        GeneticAlgorithm<vector<double>>* geneticAlgorithmp = &geneticAlgorithm;
+        geneticworld.push_back(geneticAlgorithmp);
+        geneticAlgorithm.initPopulation(-1, 1, 100);
+        FitessSVDFunc fitessSVDFunc;
+        for (int i =0; i < 5; i++) {
+            cout << "generation:" + to_string(i) << endl;
+            fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
+            geneticAlgorithm.sortByFitness();
+            //cout << "Best: " << " " << (*geneticAlgorithm.populationP)[0].populationProperties[0] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[1] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[2] << " (" << (*geneticAlgorithm.populationP)[0].fitness << ")\n";
+            geneticAlgorithm.mate(0.1, 0.2);
+        }
+    }
+    vector<double> populationproperties(3, 0.0);
+    GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
+    geneticAlgorithm.randomMin = -1;
+    geneticAlgorithm.randMax = 1;
+    geneticAlgorithm.randBase = 100;
+    int i = 0;
+    for (auto geneticworldunit:geneticworld){
+        for (int j = 0; j < 40; j++){
+            (geneticAlgorithm.population[i].fitness) = (*geneticworldunit).population[j].fitness;
+            for (int k = 0; k < 3; k++){
+                (geneticAlgorithm.population[i].populationProperties[k]) = (*geneticworldunit).population[j].populationProperties[k];
+            }
+            i++;
+        }
+    }
+    FitessSVDFunc fitessSVDFunc;
+    for (int i =0; i < 10000; i++) {
+        fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
+        geneticAlgorithm.sortByFitness();
+        cout << "Best: " << " " << (*geneticAlgorithm.populationP)[0].populationProperties[0] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[1] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[2] << " (" << (*geneticAlgorithm.populationP)[0].fitness << ")\n";
+        geneticAlgorithm.mate(0.1, 0.2);
+    }
+
+}
+
+
 
 int main() {
-    geneticSVDcalculation();
+    distributedGeneticAlgorithm();
     return 0;
 }
