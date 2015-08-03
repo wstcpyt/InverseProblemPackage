@@ -28,8 +28,8 @@ void LineChart::drawchart(std::vector<double>& x, std::vector<double>& y, const 
     fprintf(gnuplotPipe, "set xtics font \"Times-Roman, 14\" \n");
     fprintf(gnuplotPipe, "set ytics font \"Times-Roman, 14\" \n");
     fprintf(gnuplotPipe, "set key off \n");
-    //fprintf(gnuplotPipe, "set logscale x \n");
-    //fprintf(gnuplotPipe, "set logscale y \n");
+    fprintf(gnuplotPipe, "set logscale x \n");
+    fprintf(gnuplotPipe, "set logscale y \n");
     fprintf(gnuplotPipe, "plot 'tempadata.temp'\n");
     fclose(temp);
     pclose(gnuplotPipe);

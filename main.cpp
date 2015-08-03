@@ -8,7 +8,7 @@
 #include <gsl/gsl_blas.h>
 #include <math.h>
 #define MATRIXSIZE 40
-#define GA_POPSIZE 200
+#define GA_POPSIZE 2000
 #define d 0.25f
 
 using namespace std;
@@ -89,7 +89,7 @@ public:
     template<typename T>
     void singlepopulationfitness(T &singlepopulation){
         GeoMeasure geoMeasure(singlepopulation.populationProperties[0], singlepopulation.populationProperties[1], singlepopulation.populationProperties[2]);
-        vector<double> lambdasweep {1E-16, 1E-15, 1E-14, 1E-13, 1E-12, 1E-11, 1E-10, 1E-9, 1E-8, 1E-7, 1E-6, 1E-5, 1E-4, 1E-3, 1E-2, 1E-1, 1};
+        vector<double> lambdasweep {1E-16, 1E-15, 1E-14, 2E-14, 5E-14, 1E-13, 2E-13, 5E-13, 1E-12, 2E-12 ,5E-12, 1E-11, 2E-11, 5E-11, 1E-10, 1E-9, 1E-8};
         size_t lambdasize = lambdasweep.size();
         vector<double> gValuearray (lambdasize, 0.0);
         for (int k = 0; k < lambdasize; k++){
@@ -114,7 +114,7 @@ public:
 void geneticSVDcalculation(){
     vector<double> populationproperties(3, 0.0);
     GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
-    geneticAlgorithm.initPopulation(-1, 1, 10);
+    geneticAlgorithm.initPopulation(-1, 1, 100);
     FitessSVDFunc fitessSVDFunc;
     for (int i =0; i < 10000; i++) {
         fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
@@ -125,7 +125,7 @@ void geneticSVDcalculation(){
 }
 
 void getBestFitLambdaValue(GeoMeasure& geoMeasure){
-    vector<double> lambdasweep {1E-16, 1E-15, 1E-14, 1E-13, 1E-12, 1E-11, 1E-10, 1E-9, 1E-8, 1E-7, 1E-6, 1E-5, 1E-4, 1E-3, 1E-2, 1E-1, 1};
+    vector<double> lambdasweep {1E-12, 1E-11};
     size_t lambdasize = lambdasweep.size();
     vector<double> gValuearray (lambdasize, 0.0);
     for (int k = 0; k < lambdasize; k++){
