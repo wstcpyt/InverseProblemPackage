@@ -15,6 +15,9 @@
 
 using namespace std;
 
+
+
+
 class GeoMeasure{
     gsl_vector* fexact;
     double b0d,b1d, b2d;
@@ -194,6 +197,23 @@ void distributedGeneticAlgorithm(){
     }
 
 }
+
+#include <fstream>
+
+void writeToFiile(int generation, CEA::PopulationVector population){
+    ofstream myfile;
+    myfile.open("populationgrid/generation"+ to_string(generation) + ".txt");
+
+    for (auto populationRow:population){
+        for (int i = 0; i < POPULATIONNUMBERLENGTH; i++){
+            myfile << populationRow[i].fitness << " ";
+        }
+        myfile << "\n";
+    }
+    myfile.close();
+}
+
+
 void printBestValue(CEA::PopulationVector population){
     vector<CEA::PopulationStruct> tournamentVector;
     for (auto populationRow:population){
@@ -205,6 +225,8 @@ void printBestValue(CEA::PopulationVector population){
          [](CEA::PopulationStruct x, CEA::PopulationStruct y){ return x.fitness < y.fitness; });
     cout << "Best: " << " " << tournamentVector[0].populationProperties[0] << " " << tournamentVector[0].populationProperties[1] << " " << tournamentVector[0].populationProperties[2] << " (" << tournamentVector[0].fitness << ")\n";
 }
+
+
 
 class FitessSVDFuncCEA{
 public:
@@ -262,6 +284,7 @@ void calculateCEA(){
                 }
             }
         }
+        writeToFiile(loop, cea.population);
         printBestValue(cea.population);
     }
 }
