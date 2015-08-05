@@ -3,10 +3,12 @@
 #include "VisualCore/LineChart.h"
 #include "GeneticAlgorithmCore/GeneticAlgorithm.h"
 #include "TikhonovSVDCore/TikhonovSVD.h"
+#define POPULATIONNUMBERLENGTH 100
 #include <gsl/gsl_vector.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_blas.h>
 #include <math.h>
+#include "CEA.h"
 #define MATRIXSIZE 40
 #define GA_POPSIZE 200
 #define d 0.25f
@@ -103,8 +105,8 @@ public:
     }
 
     template<typename T>
-    void calc_fitness(T &population){
-        for (int i = 0; i< GA_POPSIZE; i++){
+    void calc_fitness(T &population, int PopulationSize){
+        for (int i = 0; i< PopulationSize; i++){
             singlepopulationfitness(population[i]);
         }
 
@@ -114,10 +116,10 @@ public:
 void geneticSVDcalculation(){
     vector<double> populationproperties(3, 0.0);
     GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
-    geneticAlgorithm.initPopulation(-1, 1, 100);
+    geneticAlgorithm.initPopulation(-1, 1, 10);
     FitessSVDFunc fitessSVDFunc;
     for (int i =0; i < 10000; i++) {
-        fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
+        fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP), GA_POPSIZE);
         geneticAlgorithm.sortByFitness();
         cout << "Best: " << " " << (*geneticAlgorithm.populationP)[0].populationProperties[0] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[1] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[2] << " (" << (*geneticAlgorithm.populationP)[0].fitness << ")\n";
         geneticAlgorithm.mate(0.1, 0.2);
@@ -158,47 +160,114 @@ void distributedGeneticAlgorithm(){
     for (int world = 0; world < 5; world++){
         cout << "world:" + to_string(world) << endl;
         vector<double> populationproperties(3, 0.0);
-        GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
-        GeneticAlgorithm<vector<double>>* geneticAlgorithmp = &geneticAlgorithm;
+        GeneticAlgorithm<vector<double>>* geneticAlgorithmp = new GeneticAlgorithm<vector<double>>(populationproperties,GA_POPSIZE);
         geneticworld.push_back(geneticAlgorithmp);
-        geneticAlgorithm.initPopulation(-1, 1, 100);
+        (*geneticAlgorithmp).initPopulation(-1, 1, 10);
         FitessSVDFunc fitessSVDFunc;
         for (int i =0; i < 5; i++) {
             cout << "generation:" + to_string(i) << endl;
-            fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
-            geneticAlgorithm.sortByFitness();
+            fitessSVDFunc.calc_fitness((*(*geneticAlgorithmp).populationP), GA_POPSIZE);
+            (*geneticAlgorithmp).sortByFitness();
             //cout << "Best: " << " " << (*geneticAlgorithm.populationP)[0].populationProperties[0] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[1] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[2] << " (" << (*geneticAlgorithm.populationP)[0].fitness << ")\n";
-            geneticAlgorithm.mate(0.1, 0.2);
+            (*geneticAlgorithmp).mate(0.1, 0.2);
         }
     }
     vector<double> populationproperties(3, 0.0);
-    GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE);
+    GeneticAlgorithm<vector<double>> geneticAlgorithm(populationproperties,GA_POPSIZE*5);
     geneticAlgorithm.randomMin = -1;
     geneticAlgorithm.randMax = 1;
-    geneticAlgorithm.randBase = 100;
+    geneticAlgorithm.randBase = 10;
+
     int i = 0;
     for (auto geneticworldunit:geneticworld){
-        for (int j = 0; j < 40; j++){
-            (geneticAlgorithm.population[i].fitness) = (*geneticworldunit).population[j].fitness;
-            for (int k = 0; k < 3; k++){
-                (geneticAlgorithm.population[i].populationProperties[k]) = (*geneticworldunit).population[j].populationProperties[k];
-            }
+        for (int j = 0; j < GA_POPSIZE; j++){
+            ((*geneticAlgorithm.populationP)[i]) = (*(*geneticworldunit).populationP)[j];
             i++;
         }
     }
     FitessSVDFunc fitessSVDFunc;
     for (int i =0; i < 10000; i++) {
-        fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP));
+        fitessSVDFunc.calc_fitness((*geneticAlgorithm.populationP), GA_POPSIZE*5);
         geneticAlgorithm.sortByFitness();
         cout << "Best: " << " " << (*geneticAlgorithm.populationP)[0].populationProperties[0] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[1] << " " << (*geneticAlgorithm.populationP)[0].populationProperties[2] << " (" << (*geneticAlgorithm.populationP)[0].fitness << ")\n";
         geneticAlgorithm.mate(0.1, 0.2);
     }
 
 }
+void printBestValue(CEA::PopulationVector population){
+    vector<CEA::PopulationStruct> tournamentVector;
+    for (auto populationRow:population){
+        sort(populationRow.begin(), populationRow.end(),
+             [](CEA::PopulationStruct x, CEA::PopulationStruct y){ return x.fitness < y.fitness; });
+        tournamentVector.push_back(populationRow[0]);
+    }
+    sort(tournamentVector.begin(), tournamentVector.end(),
+         [](CEA::PopulationStruct x, CEA::PopulationStruct y){ return x.fitness < y.fitness; });
+    cout << "Best: " << " " << tournamentVector[0].populationProperties[0] << " " << tournamentVector[0].populationProperties[1] << " " << tournamentVector[0].populationProperties[2] << " (" << tournamentVector[0].fitness << ")\n";
+}
 
+class FitessSVDFuncCEA{
+public:
+    FitessSVDFuncCEA(){
+
+    }
+    template<typename T>
+    double singlepopulationfitness(T singlepopulation){
+        GeoMeasure geoMeasure(singlepopulation.populationProperties[0], singlepopulation.populationProperties[1], singlepopulation.populationProperties[2]);
+        vector<double> lambdasweep {1E-11};
+        size_t lambdasize = lambdasweep.size();
+        vector<double> gValuearray (lambdasize, 0.0);
+        for (int k = 0; k < lambdasize; k++){
+            TikhonovSVD tikhonovSVD(geoMeasure.A, geoMeasure.b);
+            tikhonovSVD.getXtikhonovSVD(lambdasweep[k]);
+            double Gvalue = tikhonovSVD.getGCVValue(geoMeasure.A,geoMeasure.b, tikhonovSVD.XTikhonovSVD);
+            gValuearray[k] = Gvalue ;
+        }
+        double miniumvalue = *min_element(gValuearray.begin(), gValuearray.end());
+        return miniumvalue;
+    }
+
+};
+
+
+void calculateCEA(){
+    srand(unsigned(time(NULL)));
+    vector<double> populationProperties(3, 0.0);
+    CEA cea(populationProperties, POPULATIONNUMBERLENGTH);
+    cea.initIndividual(-1, 1, 100);
+    FitessSVDFuncCEA fitessSVDFunc;
+    for (int loop = 0; loop < 1000; loop++){
+        // for each node in the population
+        for (int i = 0; i < POPULATIONNUMBERLENGTH; i++){
+            for (int j = 0; j < POPULATIONNUMBERLENGTH; j++){
+                //evaluate individual at node
+                cea.population[i][j].fitness = fitessSVDFunc.singlepopulationfitness(cea.population[i][j]);
+                //produce offspring
+                auto offsprings = cea.produceOffSpring(i, j);
+                //evaluate offspring
+                for (auto& offspring:offsprings){
+                    offspring.fitness = fitessSVDFunc.singlepopulationfitness(offspring);
+                }
+                //assign one of the offspring to node according to a given criterion using binary tournament
+                vector<CEA::PopulationStruct> Tournamentoffspring;
+                int offspringAindex = rand() % int(offsprings.size());
+                Tournamentoffspring.push_back(offsprings[offspringAindex]);
+                offsprings.erase(offsprings.begin() + offspringAindex);
+                int offspringBindex = rand() % int(offsprings.size());
+                Tournamentoffspring.push_back(offsprings[offspringBindex]);
+                if (Tournamentoffspring[0].fitness <= Tournamentoffspring[0].fitness){
+                    if (Tournamentoffspring[0].fitness < cea.population[i][j].fitness){
+                        cea.population[i][j] = Tournamentoffspring[0];
+                    }
+                }
+            }
+        }
+        printBestValue(cea.population);
+    }
+}
 
 
 int main() {
-    distributedGeneticAlgorithm();
+    calculateCEA();
     return 0;
 }

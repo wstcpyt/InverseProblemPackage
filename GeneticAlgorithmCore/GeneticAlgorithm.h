@@ -38,8 +38,8 @@ class GeneticAlgorithm {
     typedef vector<GaStruct> GaVector;
     unsigned int populationNumber;
     GaVector buffer;
-public:
     GaVector population;
+public:
     double randomMin, randMax;
     double randBase;
     //! Constructor for GeneticAlgorithm class
