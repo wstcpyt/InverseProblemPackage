@@ -16,8 +16,6 @@
 using namespace std;
 
 
-
-
 class GeoMeasure{
     gsl_vector* fexact;
     double b0d,b1d, b2d;

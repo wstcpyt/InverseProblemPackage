@@ -55,13 +55,13 @@ vector<CEA::PopulationStruct> CEA::produceOffSpring(int x, int y) {
     }
     //left offspring
     if(x - 1 >= 0){
-        PopulationStruct parentB = population[x][x-1];
+        PopulationStruct parentB = population[x-1][y];
         mate(parentA, parentB, 0.1);
         offSprings.push_back(parentB);
     }
     //right off spring
     if(x + 1 < populationNumberLength){
-        PopulationStruct parentB = population[x][x+1];
+        PopulationStruct parentB = population[x+1][y];
         mate(parentA, parentB, 0.1);
         offSprings.push_back(parentB);
     }
