@@ -4,9 +4,12 @@
 
 \usepackage{cite}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \begin{document}
-\title{Self Consistent Inverse Pronlem With Cross Validation}
+\title{Self Consistent ill-posed Inverse Pronlem With Cross Validation}
 \maketitle
 
 \section{Introduction and Motivation}
@@ -42,13 +45,135 @@ In order to solve the ill-posed inverse problem which the measure value or the
 model is not accurate enougth to give out a good reconstructed result, we
 introduce the self consistent regularization method With Cross Validation.
 
+\section{Regularization Methods at Work: A Model Problem from Geophysics}
+We use a very simple model to illustrate how we use regularization method to
+solve the ill-posed inverse problem. We use a simplified problem from gravity
+surveying. An unknown mass distribution with density \(f(t)\) is located at
+depth de below the surface. From 0 to 1 on the \(t\) axis shown in
+Figure. \ref{fig:GeophysicsIllustrator}. We assume there is no mass outside
+this source, which produce a gravity field everywhere. At the surface, along the
+s axis in Figure. \ref{fig:GeophysicsIllustrator} from 0 to 1, we mreasure the
+vertical component of the gravity field, which reger to as g(s).
+ 
+ \begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.7\textwidth]{images/GeophysicsIllustrator/illustrator}
+  \caption{The geometry of the gravity surveying model problem: \(f(t)\) is the
+  mass density at \(t\). and g(s) is the vertical component of the gravity
+  field at s.}
+  \label{fig:GeophysicsIllustrator}
+\end{figure}
+The two functions f and g are related via a Fredholm integral equation of the
+first kind. The gravity field from an infinitesmally small part of f(t), of
+length dt, on the axis is identical to the field from a point mass at t of
+strength f(t)dt. Hence, the magnitude of the gravity field along s is
+\(f(t)dt/{r^{2x}}\), where \(r = \sqrt {{d^2} + {{(s - t)}^2}} \) is the
+distance between the source point at t and the field point at s. The direction
+of the gravity field is from the field point to  he source point, and therefore
+the measured value of g(s) is
+\[dg = \frac{{\sin \theta }}{{{r^2}}}f(t)dt\]
+where \(\theta \) is the angle shwon in Figure. \ref{fig:GeophysicsIllustrator}.
+Using that \(\sin \theta  = d/r\), we obtain
+\[\frac{{\sin \theta }}{{{r^2}}}f(t)dt = \frac{d}{{{{({d^2} + {{(s -
+t)}^2})}^{3/2}}}}f(t)dt\]
+The total value of g(s) for any \(0 \le s \le 1\) consists of contributions from
+all mass along the t axis (from 0 to 1). and it is therefore given by the
+integral
+\[g(s) = \int\limits_0^1 {\frac{d}{{{{({d^2} + {{(s - t)}^2})}^{3/2}}}}f(t)dt}
+\]
+This is the forward problem and writing it as
+\begin{equation}
+\int\limits_0^1 {K(s,t)f(t)dt = g(s),\begin{array}{*{20}{c}}
+{0 \le s \le 1}&{}
+\end{array}}
+\label{eq:integralequation}
+\end{equation}
+where the function K, which represents the model, is given by
+\begin{equation}
+k(s,t) = \frac{d}{{{{({d^2} + {{(s - t)}^2})}^{3/2}}}}
+\end{equation}
+and the righ-hand side g is what we are able to measure. The function K is the
+vertical component of the gravity field, measured at s, from a unit point source
+locate at t. From K and g we want to compute f, and this is the inverse problem.
+
+Figure.\ref{fig:geoexact} shows an example of the computation of the measured
+signal g(s), given the mass distribution f and three different values of the
+depth d.
+
+\begin{figure}
+	\centering
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/FexactPlot/fexactplot}
+			\caption{f(t)}
+			\label{fig:f(t)}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/GexactPlot/gexactplot}
+			\caption{g(s)}
+			\label{fig:g(s)}
+		\end{subfigure}
+		\caption{(a) shows the function f(the mass density
+		distribution), and (b) shows the measured signal g (the
+		gravity field) for three different values of the depth d in Figure.
+		\ref{fig:GeophysicsIllustrator}}\label{fig:geoexact}
+\end{figure}
+\subsection{Discretization of Liner Inverse Problems: Quadrature Methods}
+We compute approximations \({\tilde f_j}\) to the solution f solely at selected
+abscissas \({t_1},{t_2},...{t_n},i.e.\),
+\[{\tilde f_j} = \tilde f({t_j}),\begin{array}{*{20}{c}}
+{}&{j = 1,2,...,n.}
+\end{array}\]
+
+Quadrature methods--also called Nystrom methods--take their basis in the general
+quadrature rule of the form 
+\[\int\limits_0^1 {\varphi (t)dt = \sum\limits_{j = 1}^n {{\omega _j}\varphi
+({t_j})} }  + {E_n}\]
+where \(\varphi \) is the function whose integral we want to evaluate, \({E_n}\)
+is the quadrature error, \({t_1},{t_2},...,{t_n}\) are the abscissas for the
+quadrature rule, and \({\omega _1},{\omega _2},{\omega _3},...,{\omega _n}\) are
+the corresponding weights. For example, for the midpoint rule in the interval
+\([0, 1]\) we have
+\begin{equation}
+{t_j} = \frac{{j - \frac{1}{2}}}{n},\begin{array}{*{20}{c}}
+{}&{{\omega _j} = \frac{1}{n},\begin{array}{*{20}{c}}
+{}&{j = 1,2,...n.}
+\end{array}}
+\end{array}
+\end{equation}
+Apply the quadrature methods on Eq.\ref{eq:integralequation}, we arrive at the
+relations
+\begin{equation}
+\sum\limits_{j = 1}^n {{\omega _j}K({s_j},{t_j})} {\tilde f_j} = g({s_i}),\begin{array}{*{20}{c}}
+{}&{i = 1,...n.}
+\end{array}
+\end{equation}
+
+The realtion in Eq.\ref{eq:disintegral} are just a linear system, which can be
+also written as
+\[\left( {\begin{array}{*{20}{c}}
+{{\omega _1}K({s_1},{t_1})}&{{\omega _2}K({s_1},{t_2})}&{...}&{{\omega _n}K({s_1},{t_n})}\\
+{{\omega _1}K({s_2},{t_1})}&{{\omega _2}K({s_2},{t_2})}&{...}&{{\omega _1}K({s_2},{t_n})}\\
+ \vdots & \vdots &{}& \vdots \\
+{{\omega _1}K({s_n},{t_1})}&{{\omega _1}K({s_n},{t_2})}&{...}&{{\omega _1}K({s_n},{t_n})}
+\end{array}} \right)\]
+
+or simply \(Ax=b\), where A is an \(n \times n\) matrix. The elements of the
+matrix A, the right-hand side b, and the solution vector x are given by
+\begin{equation}
+\left. {\begin{array}{*{20}{c}}
+{{a_{ij}} = {\omega _j}K({s_i},{t_j})}\\
+{{x_j} = \tilde f({t_j})}\\
+{{b_i} = g({s_i})}
+\end{array}} \right\}\begin{array}{*{20}{c}}
+{}&{i,j = 1,...,n.}
+\end{array}
+\end{equation}
 
 \section{Generalized Cross Validation}
 The fitness is calculated as:
 \begin{equation}
 	\mathop {\min }\limits_\lambda  ||A{x_\lambda } - {b^{exact}}||_2^2
 \end{equation}
-
 However, we can't calculate it since \(b^{exact}\) is not available. Generalized 
 Cross Validation is a classical statistical technique that comes into good use
 here \cite{hansen2010discrete}.
@@ -57,7 +182,9 @@ Using Generalized Cross Validation(GSV), the fitness can be calculated as:
 \begin{equation}
 	\mathop {\min }\limits_\lambda  \frac{{||A{x_\lambda } - b||_2^2}}{{{{(m -
 	\sum\nolimits_{i = 1}^n {\varphi _i^{[\lambda ]}} )}^2}}}
+	\label{eq:disintegral}
 \end{equation}
+
 
 \section{Cellular Evolutionary Algorithm}
 Usually EAs assume that the strucutre of the population is panmictic, which
