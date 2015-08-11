@@ -1,6 +1,6 @@
 __author__ = 'yutongpang'
 import sys
-sys.path.append('/Users/yutongpang/ClionProjects/InverseProblemPackage')
+sys.path.append('/Users/yutongpang/PycharmProjects/InverseProblemPackage')
 import matplotlib.pyplot as plt
 from pythonCore.GeoPhysics import GeoPhysicsBase
 import numpy as np

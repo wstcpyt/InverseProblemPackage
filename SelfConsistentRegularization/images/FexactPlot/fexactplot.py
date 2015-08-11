@@ -1,6 +1,6 @@
 __author__ = 'yutongpang'
 import sys
-sys.path.append('/Users/yutongpang/ClionProjects/InverseProblemPackage')
+sys.path.append('/Users/yutongpang/PycharmProjects/InverseProblemPackage')
 import matplotlib.pyplot as plt
 from pythonCore.GeoPhysics import GeoPhysicsBase
 import numpy as np
@@ -19,4 +19,4 @@ def plot_geophysics_fexact(discretization_size):
 
 
 if __name__ == '__main__':
-    plot_geophysics_fexact(400)
+    plot_geophysics_fexact(40)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 AUG 2015 20:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 AUG 2015 16:42
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -109,7 +109,35 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen119
 \Gm@dimlist=\toks15
 )
-(./document.aux)
+(./document.aux
+
+LaTeX Warning: Label `fig:picard_plot_without_noise' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:picard_plot_without_noise' multiply defined.
+
+
+LaTeX Warning: Label `fig:picard_plot_with_noise' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:picard_plot_with_noise' multiply defined.
+
+
+LaTeX Warning: Label `fig:picard_plot_without_noise' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:picard_plot_without_noise' multiply defined.
+
+
+LaTeX Warning: Label `fig:picard_plot_with_noise' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:picard_plot_with_noise' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsvd_plot' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -124,8 +152,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count94
 \scratchdimen=\dimen120
@@ -262,74 +289,109 @@ Package pdftex.def Info: images/GexactPlot/gexactplot.png used on input line 11
 1.
 (pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
  [2 <./images/GeophysicsIllustrator/illustrator.png>] [3 <./images/FexactPlot/f
-exactplot.png> <./images/GexactPlot/gexactplot.png>] [4] <images/exactmassdensi
-ty.png, id=32, 642.4pt x 481.8pt>
-File: images/exactmassdensity.png Graphic file (type png)
+exactplot.png> <./images/GexactPlot/gexactplot.png>]
+! Undefined control sequence.
+l.177 n}}\) with \(m \geqslant
+                               n\), the SVD takes the form
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-<use images/exactmassdensity.png>
-Package pdftex.def Info: images/exactmassdensity.png used on input line 201.
-(pdftex.def)             Requested size: 303.53267pt x 227.6517pt.
+[4]
+<images/PicardPlot/picardplot_without_noise.png, id=33, 578.16pt x 433.62pt>
+File: images/PicardPlot/picardplot_without_noise.png Graphic file (type png)
 
-<images/exactgravityfield.png, id=33, 642.4pt x 481.8pt>
-File: images/exactgravityfield.png Graphic file (type png)
+<use images/PicardPlot/picardplot_without_noise.png>
+Package pdftex.def Info: images/PicardPlot/picardplot_without_noise.png used on
+ input line 214.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
 
-<use images/exactgravityfield.png>
-Package pdftex.def Info: images/exactgravityfield.png used on input line 207.
-(pdftex.def)             Requested size: 303.53267pt x 227.6517pt.
+<images/PicardPlot/picardplot_with_noise.png, id=34, 578.16pt x 433.62pt>
+File: images/PicardPlot/picardplot_with_noise.png Graphic file (type png)
+
+<use images/PicardPlot/picardplot_with_noise.png>
+Package pdftex.def Info: images/PicardPlot/picardplot_with_noise.png used on in
+put line 219.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
+
+<images/TSVD/tsvdplot.png, id=35, 578.16pt x 433.62pt>
+File: images/TSVD/tsvdplot.png Graphic file (type png)
+
+<use images/TSVD/tsvdplot.png>
+Package pdftex.def Info: images/TSVD/tsvdplot.png used on input line 235.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
+
+<images/TSVD/tsvdplot_withnoise.png, id=36, 578.16pt x 433.62pt>
+File: images/TSVD/tsvdplot_withnoise.png Graphic file (type png)
+
+<use images/TSVD/tsvdplot_withnoise.png>
+Package pdftex.def Info: images/TSVD/tsvdplot_withnoise.png used on input line 
+241.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `fig:tikhonov_plot' on page 5 undefined on input line 
+249.
 
-<images/reconstructedmassdensitygood.png, id=34, 642.4pt x 481.8pt>
-File: images/reconstructedmassdensitygood.png Graphic file (type png)
+<images/TikhonovRegularization/tikhonovplot.png, id=37, 578.16pt x 433.62pt>
+File: images/TikhonovRegularization/tikhonovplot.png Graphic file (type png)
 
-<use images/reconstructedmassdensitygood.png>
-Package pdftex.def Info: images/reconstructedmassdensitygood.png used on input 
-line 213.
-(pdftex.def)             Requested size: 303.53267pt x 227.6517pt.
+<use images/TikhonovRegularization/tikhonovplot.png>
+Package pdftex.def Info: images/TikhonovRegularization/tikhonovplot.png used on
+ input line 254.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 257.
+
+<images/TikhonovRegularization/tikhonovplot_withnoise.png, id=38, 578.16pt x 43
+3.62pt>
+File: images/TikhonovRegularization/tikhonovplot_withnoise.png Graphic file (ty
+pe png)
+ <use images/TikhonovRegularization/tikhonovplot_withnoise.png>
+Package pdftex.def Info: images/TikhonovRegularization/tikhonovplot_withnoise.p
+ng used on input line 260.
+(pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
+
+(./document.bbl [5] [6 <./images/PicardPlot/picardplot_without_noise.png> <./im
+ages/PicardPlot/picardplot_with_noise.png>] [7 <./images/TSVD/tsvdplot.png> <./
+images/TSVD/tsvdplot_withnoise.png>] [8 <./images/TikhonovRegularization/tikhon
+ovplot.png> <./images/TikhonovRegularization/tikhonovplot_withnoise.png>])
+[9] (./document.aux)
+
+LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: There were multiply-defined labels.
 
-<images/reconstructedmassdensitybad.png, id=35, 642.4pt x 481.8pt>
-File: images/reconstructedmassdensitybad.png Graphic file (type png)
-
-<use images/reconstructedmassdensitybad.png>
-Package pdftex.def Info: images/reconstructedmassdensitybad.png used on input l
-ine 221.
-(pdftex.def)             Requested size: 303.53267pt x 227.6517pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(./document.bbl) [5 <./images/exactmassdensity.png>] [6 <./images/exactgravityf
-ield.png> <./images/reconstructedmassdensitygood.png>] [7 <./images/reconstruct
-edmassdensitybad.png>] (./document.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 3217 strings out of 493117
- 51095 string characters out of 6135433
- 118472 words of memory out of 5000000
- 6655 multiletter control sequences out of 15000+600000
- 8232 words of font info for 29 fonts, out of 8000000 for 9000
+ 3239 strings out of 493117
+ 51883 string characters out of 6135433
+ 118529 words of memory out of 5000000
+ 6670 multiletter control sequences out of 15000+600000
+ 9153 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,38p,875b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti10.pfb>
-Output written on document.pdf (7 pages, 249425 bytes).
+ 38i,12n,38p,875b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on document.pdf (9 pages, 379967 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

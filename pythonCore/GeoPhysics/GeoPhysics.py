@@ -1,6 +1,5 @@
 __author__ = 'yutongpang'
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 class GeoPhysicsBase:
@@ -8,7 +7,7 @@ class GeoPhysicsBase:
         self.discretization_size = discretization_size
         self.fexact = np.zeros(discretization_size)
         self.A = np.zeros((discretization_size, discretization_size))
-        self.d = d;
+        self.d = d
         self._init_fexact()
         self._init_A()
         self._calculate_g()

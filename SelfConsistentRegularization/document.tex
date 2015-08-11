@@ -169,6 +169,101 @@ matrix A, the right-hand side b, and the solution vector x are given by
 \end{array}
 \end{equation}
 
+
+\subsection{The Singular Value Decompostion}
+While the matrices that we encountered in the previous section are squre, it can
+be aslo apply to general case. Hence, we  assume that the matrix is either
+square or has more rows than columns. Then, for any matrix \(A \in {R^{m \times
+n}}\) with \(m \geqslant n\), the SVD takes the form
+\begin{equation}
+A = U\Sigma {V^T} = \sum\limits_{i = 1}^n {{u_i}{\sigma _i}v_i^T} 
+\end{equation}
+Here, \(\Sigma  \in {R^{n \times n}}\) is a diagonal matrix with the signluar
+values, satisfying
+\[\Sigma  = diag({\sigma _1},...,{\sigma _n}),\begin{array}{*{20}{c}}
+{{\sigma _1} \ge {\sigma _2} \ge  \cdots  \ge {\sigma _n} \ge 0}&{}
+\end{array}\]
+
+The matrices \(U \in {R^{m \times n}}\) and \(V \in {R^{m \times n}}\) consistt
+of the left and right singular vectors
+\[U = ({u_1},...,{u_n})\begin{array}{*{20}{c}}
+{}&{V = ({v_1},...,{v_n})}
+\end{array}\]
+and both matrices have orthonormal columns:
+\[{U^T}U = {V^T}V = I\]
+
+Here we apply the svd to the inverse problem \(x = {A^{ - 1}}b\), we immediately
+see that the ``naive'' solution is given by
+\begin{equation}
+x = {A^{ - 1}}b = \sum\limits_{i = 1}^n {\frac{{u_i^Tb}}{{{\sigma _i}}}}
+{v_i}
+\end{equation}
+
+\subsection{SVD Analysis and the Discrete Picard Condition}
+The Discrete picard Condition: Let \(\tau \) denote the level at which the
+computed singular values \({\sigma _i}\) level off due to rounding errors. The
+discrete Picard condition is satisfied if, for all singular values larger than
+\(\tau \), the correspoing coefficients \(\left| {u_i^Tb} \right|\), on average,
+decay faster than the \({\sigma _i}\).
+
+Figure.\ref{fig:picard_plot} shows the picard plot fro the discretized gravity
+surveing problem with different noise level.
+\begin{figure}
+	\centering
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/PicardPlot/picardplot_without_noise}
+			\caption{With
+			no noise in the right hand side (only discretization noise)}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/PicardPlot/picardplot_with_noise}
+			\caption{With
+			added noise in the right hand side}
+		\end{subfigure}
+		\caption{The Picard plots for the discretized gravity
+		surveing problem with different noise level. (a) With
+		no added noise (only discretization noise). (b) With
+		an addional white noised added to the measured g
+		(1E-4 random white noise)}\label{fig:picard_plot}
+\end{figure}
+\subsection{Truncated SVD}
+Figure.\ref{fig:tsvd_plot} shows tsvd reconstructed f for the discretized
+gravity surveing problem with differernt noise level.
+\begin{figure}
+	\centering
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/TSVD/tsvdplot}
+			\caption{With
+			no noise in the right hand side (only discretization noise) truncated number
+			k = 48}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/TSVD/tsvdplot_withnoise}
+			\caption{With
+			added noise in the right hand side (white noise 1E-4), truncated number k =
+			18}
+		\end{subfigure}
+		\caption{TSVD f reconstruction}\label{fig:tsvd_plot}
+\end{figure}
+\subsection{Tikhonov Regularization}
+Figure.\ref{fig:tikhonov_plot} shows Tikhonov Regularization reconstructed f for the
+discretized gravity surveing problem with differernt noise level.
+\begin{figure}
+	\centering
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/TikhonovRegularization/tikhonovplot}
+			\caption{With
+			no noise in the right hand side (only discretization noise), \(\lambda \) =
+			1E-12}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/TikhonovRegularization/tikhonovplot_withnoise}
+			\caption{With
+			added noise in the right hand side (white noise 1E-4), \(\lambda \) =
+			1E-3}
+		\end{subfigure}
+		\caption{Tikhonov Regularization f reconstruction}\label{fig:tikhonov_plot}
+\end{figure}
 \section{Generalized Cross Validation}
 The fitness is calculated as:
 \begin{equation}
@@ -194,36 +289,6 @@ However, this need not be always the case: we often see population sin the
 biological and social world in which individuals only interact with a subset of
 the rest of the population. This situation can usefully be depicated by using
 the concept of a population graph \cite{hoekstra2010simulating}.
-
-\section{Result}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.7\textwidth]{images/exactmassdensity}
-  \caption{Exact f function (mass density distribution)}
-  \label{fig:MASS}
-\end{figure}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.7\textwidth]{images/exactgravityfield}
-  \caption{Exact signal g (the gravity field)}
-  \label{fig:G}
-\end{figure}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.7\textwidth]{images/reconstructedmassdensitygood}
-  \caption{The Reconstructed function f(the mass density distribution) after
-  self-consistent genetic algorithm, at \(\lambda  = {10^{ - 12}}\), GSV value
-  = 1.65e-25}
-  \label{fig:RMASSGOOD}
-\end{figure}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.7\textwidth]{images/reconstructedmassdensitybad}
-  \caption{The Reconstructed function f(the mass density distribution) without
-  self-consistent genetic algorithm, at \(\lambda  = {10^{ - 12}}\), GSV value
-  = 7.22e-10}
-  \label{fig:RMASSBAD}
-\end{figure}
 
 \bibliography{mybib}{}
 \bibliographystyle{plain}
