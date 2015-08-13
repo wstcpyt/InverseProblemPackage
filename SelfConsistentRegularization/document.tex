@@ -264,7 +264,7 @@ discretized gravity surveing problem with differernt noise level.
 		\end{subfigure}
 		\caption{Tikhonov Regularization f reconstruction}\label{fig:tikhonov_plot}
 \end{figure}
-\section{Generalized Cross Validation}
+\subsection{Fitness of the Reconstruction: Generalized Cross Validation}
 The fitness is calculated as:
 \begin{equation}
 	\mathop {\min }\limits_\lambda  ||A{x_\lambda } - {b^{exact}}||_2^2
@@ -279,12 +279,34 @@ Using Generalized Cross Validation(GSV), the fitness can be calculated as:
 	\sum\nolimits_{i = 1}^n {\varphi _i^{[\lambda ]}} )}^2}}}
 	\label{eq:disintegral}
 \end{equation}
+\subsection{Self Consistent Regularization With Cross Validation}
 
 
 \section{Cellular Evolutionary Algorithm}
-Usually EAs assume that the strucutre of the population is panmictic, which
-means that any inidividual may interact with any other individual in the
-population.
+\subsection{Evolutionary Algorithms}
+Evolutinary algorithms (EAs) are a family of heuristic search methods that are
+often used nowadays to find satisfactory solutions to difficult optimization and
+machine learning problems. EAs are lossely based on a few fundamental
+evolutionary ideas introduced by Darwin in the niewteenth century. These
+concepts revolve around the notion of populations of organisms adapting to their
+enviroment through genetic inheritance and survivial of the fittest.
+
+Each individual may be viewed as a representation, according to an appropriate
+encoding, of a particular solution to an algorithmic problem. To implement an
+EAs for solving a given problem, at least approximately, the user must provide
+the following pieces of information.
+
+\subsubsection{Representation}
+Individuals in the population represent solutions to a pronlem and must be
+encoded in some way to manipulated by the EA processes. They may be just string
+of binary digits, which is a widespread and universal representation, or they
+may be any other data structure that is suitable for the problem at hand such as
+string of integers, alphabetic characters, strings of real numbers, and even
+trees or graphs.
+\subsubsection{Genetic Operators}
+
+Usually Evolutionary Algorithm assume that the strucutre of the population is
+panmictic, which means that any inidividual may interact with any other individual in the population.
 However, this need not be always the case: we often see population sin the
 biological and social world in which individuals only interact with a subset of
 the rest of the population. This situation can usefully be depicated by using

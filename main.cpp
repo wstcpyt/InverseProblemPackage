@@ -275,9 +275,14 @@ void calculateCEA(){
                 offsprings.erase(offsprings.begin() + offspringAindex);
                 int offspringBindex = rand() % int(offsprings.size());
                 Tournamentoffspring.push_back(offsprings[offspringBindex]);
-                if (Tournamentoffspring[0].fitness <= Tournamentoffspring[0].fitness){
+                if (Tournamentoffspring[0].fitness <= Tournamentoffspring[1].fitness){
                     if (Tournamentoffspring[0].fitness < cea.population[i][j].fitness){
                         cea.population[i][j] = Tournamentoffspring[0];
+                    }
+                }
+                else{
+                    if (Tournamentoffspring[1].fitness < cea.population[i][j].fitness){
+                        cea.population[i][j] = Tournamentoffspring[1];
                     }
                 }
             }

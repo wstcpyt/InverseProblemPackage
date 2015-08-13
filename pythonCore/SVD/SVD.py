@@ -1,11 +1,13 @@
 __author__ = 'yutongpang'
 import numpy as np
+from numpy import linalg as LA
 
 
 class SVDRegularization():
     def __init__(self, AM, g):
         self.AM = AM
         self.g = g
+        self.phivector = np.zeros(len(g))
         self._decompse_matrix_with_svd()
 
     def _decompse_matrix_with_svd(self):
@@ -31,5 +33,18 @@ class SVDRegularization():
         f_tikhonov = 0
         s, utb, utbs = self.get_picatd_parameter()
         for i in range(0, len(self.g)):
-            f_tikhonov += self.s[i]**2/(self.s[i]**2+lambda_value**2)*utbs[i]*self.V[i]
-        return  f_tikhonov
+            phi = self.s[i]**2/(self.s[i]**2+lambda_value**2)
+            self.phivector[i] = phi
+            f_tikhonov += phi*utbs[i]*self.V[i]
+        return f_tikhonov
+
+    def getGCValue(self, A, g, f):
+        ro = np.dot(A, f)
+        ro = LA.norm(ro - g)**2
+        sumphi = 0
+        for i in range(0, len(g)):
+            sumphi += self.phivector[i]
+        divisor = (len(g) - sumphi)**2
+        return ro/divisor
+
+
