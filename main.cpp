@@ -3,11 +3,13 @@
 #include "VisualCore/LineChart.h"
 #include "GeneticAlgorithmCore/GeneticAlgorithm.h"
 #include "TikhonovSVDCore/TikhonovSVD.h"
-#define POPULATIONNUMBERLENGTH 100
+#define POPULATIONNUMBERLENGTHPERTHREAD 20
+#define NUMBEROFTHREAD 5
 #include <gsl/gsl_vector.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_blas.h>
 #include <math.h>
+#include <future>
 #include "CEA.h"
 #define MATRIXSIZE 40
 #define GA_POPSIZE 200
@@ -203,7 +205,7 @@ void writeToFiile(int generation, CEA::PopulationVector population){
     myfile.open("populationgrid/generation"+ to_string(generation) + ".txt");
 
     for (auto populationRow:population){
-        for (int i = 0; i < POPULATIONNUMBERLENGTH; i++){
+        for (int i = 0; i < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; i++){
             myfile << populationRow[i].fitness << " ";
         }
         myfile << "\n";
@@ -249,17 +251,46 @@ public:
 
 };
 
-
+void singlegenerationprocess(int i, int j, CEA& cea){
+    FitessSVDFuncCEA fitessSVDFunc;
+    //evaluate individual at node
+    double fitnessvalue = fitessSVDFunc.singlepopulationfitness(cea.population[i][j]);
+    cea.population[i][j].fitness = fitnessvalue;
+    //produce offspring
+    auto offsprings = cea.produceOffSpring(i, j);
+    //evaluate offspring
+    for (auto& offspring:offsprings){
+        offspring.fitness = fitessSVDFunc.singlepopulationfitness(offspring);
+    }
+    //assign one of the offspring to node according to a given criterion using binary tournament
+    vector<CEA::PopulationStruct> Tournamentoffspring;
+    int offspringAindex = rand() % int(offsprings.size());
+    Tournamentoffspring.push_back(offsprings[offspringAindex]);
+    offsprings.erase(offsprings.begin() + offspringAindex);
+    int offspringBindex = rand() % int(offsprings.size());
+    Tournamentoffspring.push_back(offsprings[offspringBindex]);
+    double result;
+    if (Tournamentoffspring[0].fitness <= Tournamentoffspring[1].fitness){
+        if (Tournamentoffspring[0].fitness < cea.population[i][j].fitness){
+            cea.population[i][j] = Tournamentoffspring[0];
+        }
+    }
+    else{
+        if (Tournamentoffspring[1].fitness < cea.population[i][j].fitness){
+            cea.population[i][j] = Tournamentoffspring[1];
+        }
+    }
+}
 void calculateCEA(){
     srand(unsigned(time(NULL)));
     vector<double> populationProperties(3, 0.0);
-    CEA cea(populationProperties, POPULATIONNUMBERLENGTH);
+    CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
     cea.initIndividual(-1, 1, 100);
     FitessSVDFuncCEA fitessSVDFunc;
     for (int loop = 0; loop < 1000; loop++){
         // for each node in the population
-        for (int i = 0; i < POPULATIONNUMBERLENGTH; i++){
-            for (int j = 0; j < POPULATIONNUMBERLENGTH; j++){
+        for (int i = 0; i < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; i++){
+            for (int j = 0; j < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; j++){
                 //evaluate individual at node
                 cea.population[i][j].fitness = fitessSVDFunc.singlepopulationfitness(cea.population[i][j]);
                 //produce offspring
@@ -291,9 +322,41 @@ void calculateCEA(){
         printBestValue(cea.population);
     }
 }
+void calculateCEAmultithreading(){
+    int numberofthread = 2;
+    srand(unsigned(time(NULL)));
+    vector<double> populationProperties(3, 0.0);
+    CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
+    cea.initIndividual(-1, 1, 100);
+    for (int loop = 0; loop < 1000; loop++){
+        // for each node in the population
+        for (int i = 0; i < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; i++){
+            vector<future<CEA>> futures{};
+            for (int thread = 0; thread < NUMBEROFTHREAD; thread++){
+                futures.push_back(async(launch::async,[&, i, thread]()->CEA{
+                    auto ceatemp = cea;
+                    for (int j = thread*POPULATIONNUMBERLENGTHPERTHREAD; j < (thread+1) * POPULATIONNUMBERLENGTHPERTHREAD; j++){
+                        singlegenerationprocess(i, j, ceatemp);
+                    }
+                    return ceatemp;
+                }));
+            }
+            for (int thread = 0; thread < NUMBEROFTHREAD; thread++){
+                auto ceatemp = futures[thread].get();
+                for (int x = 0; x < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; x++){
+                    for(int y = thread*POPULATIONNUMBERLENGTHPERTHREAD; y < (thread+1) * POPULATIONNUMBERLENGTHPERTHREAD; y++){
+                        cea.population[x][y] = ceatemp.population[x][y];
+                    }
+                }
+            }
+        }
 
+        //writeToFiile(loop, cea.population);
+        printBestValue(cea.population);
+    }
+}
 
 int main() {
-    calculateCEA();
+    calculateCEAmultithreading();
     return 0;
 }
