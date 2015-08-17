@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 AUG 2015 10:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 AUG 2015 17:36
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -109,7 +109,11 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen119
 \Gm@dimlist=\toks15
 )
-(./document.aux)
+(./document.aux
+
+LaTeX Warning: Label `fig:tikhonov_plot' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -124,8 +128,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count94
 \scratchdimen=\dimen120
@@ -322,38 +325,76 @@ pe png)
 Package pdftex.def Info: images/TikhonovRegularization/tikhonovplot_withnoise.p
 ng used on input line 260.
 (pdftex.def)             Requested size: 303.53267pt x 227.6473pt.
- [5]
-[6 <./images/PicardPlot/picardplot_without_noise.png> <./images/PicardPlot/pica
-rdplot_with_noise.png>] [7 <./images/TSVD/tsvdplot.png> <./images/TSVD/tsvdplot
-_withnoise.png>] [8 <./images/TikhonovRegularization/tikhonovplot.png> <./image
-s/TikhonovRegularization/tikhonovplot_withnoise.png>] (./document.bbl) [9]
-(./document.aux) ) 
+
+<images/CEA/simulation1/generation0.png, id=39, 578.16pt x 433.62pt>
+File: images/CEA/simulation1/generation0.png Graphic file (type png)
+
+<use images/CEA/simulation1/generation0.png>
+Package pdftex.def Info: images/CEA/simulation1/generation0.png used on input l
+ine 288.
+(pdftex.def)             Requested size: 173.44534pt x 130.08038pt.
+
+<images/CEA/simulation1/generation1.png, id=40, 578.16pt x 433.62pt>
+File: images/CEA/simulation1/generation1.png Graphic file (type png)
+
+<use images/CEA/simulation1/generation1.png>
+Package pdftex.def Info: images/CEA/simulation1/generation1.png used on input l
+ine 292.
+(pdftex.def)             Requested size: 173.44534pt x 130.08038pt.
+
+<images/CEA/simulation1/generation2.png, id=41, 578.16pt x 433.62pt>
+File: images/CEA/simulation1/generation2.png Graphic file (type png)
+
+<use images/CEA/simulation1/generation2.png>
+Package pdftex.def Info: images/CEA/simulation1/generation2.png used on input l
+ine 296.
+(pdftex.def)             Requested size: 173.44534pt x 130.08038pt.
+
+<images/CEA/simulation1/generation3.png, id=42, 578.16pt x 433.62pt>
+File: images/CEA/simulation1/generation3.png Graphic file (type png)
+
+<use images/CEA/simulation1/generation3.png>
+Package pdftex.def Info: images/CEA/simulation1/generation3.png used on input l
+ine 300.
+(pdftex.def)             Requested size: 173.44534pt x 130.08038pt.
+ [5] [6 <./images/PicardPlot/picardplot_without_noise.png> <./images/PicardPlot
+/picardplot_with_noise.png>]
+[7 <./images/TSVD/tsvdplot.png> <./images/TSVD/tsvdplot_withnoise.png>]
+[8 <./images/TikhonovRegularization/tikhonovplot.png> <./images/TikhonovRegular
+ization/tikhonovplot_withnoise.png>] [9 <./images/CEA/simulation1/generation0.p
+ng> <./images/CEA/simulation1/generation1.png> <./images/CEA/simulation1/genera
+tion2.png> <./images/CEA/simulation1/generation3.png>] (./document.bbl)
+[10] (./document.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3235 strings out of 493117
- 51757 string characters out of 6135433
- 118464 words of memory out of 5000000
- 6666 multiletter control sequences out of 15000+600000
+ 3257 strings out of 493117
+ 52544 string characters out of 6135433
+ 119503 words of memory out of 5000000
+ 6683 multiletter control sequences out of 15000+600000
  9153 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,38p,875b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on document.pdf (9 pages, 384631 bytes).
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on document.pdf (10 pages, 2834459 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

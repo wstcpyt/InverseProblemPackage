@@ -4,7 +4,7 @@
 #include "GeneticAlgorithmCore/GeneticAlgorithm.h"
 #include "TikhonovSVDCore/TikhonovSVD.h"
 #define POPULATIONNUMBERLENGTHPERTHREAD 20
-#define NUMBEROFTHREAD 5
+#define NUMBEROFTHREAD 8
 #include <gsl/gsl_vector.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_blas.h>
@@ -79,7 +79,6 @@ private:
     }
     void calculateb(){
         gsl_blas_dgemv(CblasNoTrans, 1.0, A, fexact, 0.0, b);
-        gsl_vector_set(b, 0, -0.2 + gsl_vector_get(b, 0));
         gsl_vector_set(b, 0, b0d + gsl_vector_get(b, 0));
         gsl_vector_set(b, 1, b1d + gsl_vector_get(b, 1));
         gsl_vector_set(b, 2, b2d + gsl_vector_get(b, 2));
@@ -351,7 +350,7 @@ void calculateCEAmultithreading(){
             }
         }
 
-        //writeToFiile(loop, cea.population);
+        writeToFiile(loop, cea.population);
         printBestValue(cea.population);
     }
 }

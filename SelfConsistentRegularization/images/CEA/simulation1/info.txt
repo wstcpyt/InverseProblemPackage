@@ -1,0 +1,11 @@
+Best:  -0.1 -0.16 -0.04 (2.59685e-12)
+Best:  0 0 0 (1.65376e-25)
+Best:  0 0 0 (1.65376e-25)
+Best:  0 0 0 (1.65376e-25)
+Best:  0 0 0 (1.65376e-25)
+
+
+#define POPULATIONNUMBERLENGTHPERTHREAD 20
+#define NUMBEROFTHREAD 8
+
+lambda = 1E-11, Gvalue
