@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Users/yutongpang/cpplib/gmock-1.7.0")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/yutongpang/ClionProjects/InverseProblem/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/yutongpang/PycharmProjects/InverseProblemPackage/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

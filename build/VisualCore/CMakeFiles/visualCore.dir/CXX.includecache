@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/ColorMap.cpp
+ColorMap.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/ColorMap.h
+math.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/math.h
+stdio.h
+-
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/ColorMap.h
+vector
+-
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/Gifanimate.cpp
+Gifanimate.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/Gifanimate.h
+stdio.h
+-
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/Gifanimate.h
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/LineChart.cpp
+stdlib.h
+-
+stdio.h
+-
+vector
+-
+LineChart.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/LineChart.h
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/LineChart.h
+

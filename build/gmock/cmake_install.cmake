@@ -29,7 +29,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/gtest/cmake_install.cmake")
+  include("/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/gmock/gtest/cmake_install.cmake")
 
 endif()
 

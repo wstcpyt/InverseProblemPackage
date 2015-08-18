@@ -1,4 +1,4 @@
-# Install script for directory: /Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/unit_test
+# Install script for directory: /Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/unit_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

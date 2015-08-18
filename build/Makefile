@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.1.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yutongpang/ClionProjects/InverseProblem
+CMAKE_SOURCE_DIR = /Users/yutongpang/PycharmProjects/InverseProblemPackage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yutongpang/ClionProjects/InverseProblem/build
+CMAKE_BINARY_DIR = /Users/yutongpang/PycharmProjects/InverseProblemPackage/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,9 +73,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/PycharmProjects/InverseProblemPackage/build/CMakeFiles /Users/yutongpang/PycharmProjects/InverseProblemPackage/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/ClionProjects/InverseProblem/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yutongpang/PycharmProjects/InverseProblemPackage/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -219,6 +219,43 @@ TikhonovSVDTEST/fast:
 	$(MAKE) -f TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/build.make TikhonovSVDCore/unit_test/CMakeFiles/TikhonovSVDTEST.dir/build
 .PHONY : TikhonovSVDTEST/fast
 
+#=============================================================================
+# Target rules for targets named visualCore
+
+# Build rule for target.
+visualCore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualCore
+.PHONY : visualCore
+
+# fast build rule for target.
+visualCore/fast:
+	$(MAKE) -f VisualCore/CMakeFiles/visualCore.dir/build.make VisualCore/CMakeFiles/visualCore.dir/build
+.PHONY : visualCore/fast
+
+CEA.o: CEA.cpp.o
+.PHONY : CEA.o
+
+# target to build an object file
+CEA.cpp.o:
+	$(MAKE) -f CMakeFiles/InverseProblem.dir/build.make CMakeFiles/InverseProblem.dir/CEA.cpp.o
+.PHONY : CEA.cpp.o
+
+CEA.i: CEA.cpp.i
+.PHONY : CEA.i
+
+# target to preprocess a source file
+CEA.cpp.i:
+	$(MAKE) -f CMakeFiles/InverseProblem.dir/build.make CMakeFiles/InverseProblem.dir/CEA.cpp.i
+.PHONY : CEA.cpp.i
+
+CEA.s: CEA.cpp.s
+.PHONY : CEA.s
+
+# target to generate assembly for a file
+CEA.cpp.s:
+	$(MAKE) -f CMakeFiles/InverseProblem.dir/build.make CMakeFiles/InverseProblem.dir/CEA.cpp.s
+.PHONY : CEA.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -260,6 +297,10 @@ help:
 	@echo "... GeneticAlgorithmTest"
 	@echo "... tikhonovSVDCore"
 	@echo "... TikhonovSVDTEST"
+	@echo "... visualCore"
+	@echo "... CEA.o"
+	@echo "... CEA.i"
+	@echo "... CEA.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

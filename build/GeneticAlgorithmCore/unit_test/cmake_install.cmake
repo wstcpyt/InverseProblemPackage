@@ -1,4 +1,4 @@
-# Install script for directory: /Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/unit_test
+# Install script for directory: /Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/unit_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

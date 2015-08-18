@@ -14,9 +14,9 @@ gsl/gsl_vector.h
 vector
 -
 
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVD.cpp
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVD.cpp
 TikhonovSVDCore/TikhonovSVD.h
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVDCore/TikhonovSVD.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVDCore/TikhonovSVD.h
 gsl/gsl_linalg.h
 -
 gsl/gsl_blas.h

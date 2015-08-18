@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/CEA.cpp
+CEA.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/CEA.h
+random
+-
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/CEA.h
+vector
+-
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/GeneticAlgorithm.h
 vector
 -
 vector
 -
 
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVD.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVD.h
 gsl/gsl_matrix.h
 -
 gsl/gsl_vector.h
@@ -20,15 +30,19 @@ gsl/gsl_vector.h
 vector
 -
 
-/Users/yutongpang/ClionProjects/InverseProblem/main.cpp
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/LineChart.h
+
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/main.cpp
 iostream
 -
 vector
 -
+VisualCore/LineChart.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/VisualCore/LineChart.h
 GeneticAlgorithmCore/GeneticAlgorithm.h
-/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/GeneticAlgorithm.h
 TikhonovSVDCore/TikhonovSVD.h
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVD.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVD.h
 gsl/gsl_vector.h
 -
 gsl/gsl_matrix.h
@@ -36,6 +50,12 @@ gsl/gsl_matrix.h
 gsl/gsl_blas.h
 -
 math.h
+-
+future
+-
+CEA.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/CEA.h
+fstream
 -
 
 /usr/local/Cellar/gsl/1.16/include/gsl/gsl_blas.h

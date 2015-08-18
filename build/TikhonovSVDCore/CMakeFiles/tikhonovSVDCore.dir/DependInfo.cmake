@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVD.cpp" "/Users/yutongpang/ClionProjects/InverseProblem/build/TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir/TikhonovSVD.cpp.o"
+  "/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVD.cpp" "/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir/TikhonovSVD.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

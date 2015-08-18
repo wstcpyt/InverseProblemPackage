@@ -1,0 +1,2 @@
+/usr/bin/ar cq libvisualCore.a  CMakeFiles/visualCore.dir/LineChart.cpp.o CMakeFiles/visualCore.dir/ColorMap.cpp.o CMakeFiles/visualCore.dir/Gifanimate.cpp.o
+/usr/bin/ranlib libvisualCore.a

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/yutongpang/ClionProjects/InverseProblem
+# Install script for directory: /Users/yutongpang/PycharmProjects/InverseProblemPackage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,9 +29,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/yutongpang/ClionProjects/InverseProblem/build/gmock/cmake_install.cmake")
-  include("/Users/yutongpang/ClionProjects/InverseProblem/build/GeneticAlgorithmCore/cmake_install.cmake")
-  include("/Users/yutongpang/ClionProjects/InverseProblem/build/TikhonovSVDCore/cmake_install.cmake")
+  include("/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/gmock/cmake_install.cmake")
+  include("/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/GeneticAlgorithmCore/cmake_install.cmake")
+  include("/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/TikhonovSVDCore/cmake_install.cmake")
+  include("/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/VisualCore/cmake_install.cmake")
 
 endif()
 
@@ -41,7 +42,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/Users/yutongpang/ClionProjects/InverseProblem/build/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/Users/yutongpang/ClionProjects/InverseProblem/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/Users/yutongpang/PycharmProjects/InverseProblemPackage/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

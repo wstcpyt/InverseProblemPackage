@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.cpp
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/GeneticAlgorithm.cpp
 GeneticAlgorithm.h
-/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/GeneticAlgorithm.h
 vector
 -
 random
 -
 
-/Users/yutongpang/ClionProjects/InverseProblem/GeneticAlgorithmCore/GeneticAlgorithm.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/GeneticAlgorithmCore/GeneticAlgorithm.h
 vector
 -
 vector

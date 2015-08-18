@@ -422,11 +422,11 @@ gsl/gsl_vector.h
 vector
 -
 
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/unit_test/TikhonovSVDTEST.cpp
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/unit_test/TikhonovSVDTEST.cpp
 gmock/gmock.h
 -
 TikhonovSVDCore/TikhonovSVD.h
-/Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/unit_test/TikhonovSVDCore/TikhonovSVD.h
+/Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/unit_test/TikhonovSVDCore/TikhonovSVD.h
 gsl/gsl_blas.h
 -
 

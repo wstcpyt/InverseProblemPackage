@@ -3,7 +3,7 @@
 
 TikhonovSVDCore/CMakeFiles/tikhonovSVDCore.dir/TikhonovSVD.cpp.o
  ../TikhonovSVDCore/TikhonovSVD.h
- /Users/yutongpang/ClionProjects/InverseProblem/TikhonovSVDCore/TikhonovSVD.cpp
+ /Users/yutongpang/PycharmProjects/InverseProblemPackage/TikhonovSVDCore/TikhonovSVD.cpp
  /usr/local/Cellar/gsl/1.16/include/gsl/gsl_blas.h
  /usr/local/Cellar/gsl/1.16/include/gsl/gsl_blas_types.h
  /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_char.h
