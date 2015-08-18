@@ -71,8 +71,9 @@ vector<CEA::PopulationStruct> CEA::produceOffSpring(int x, int y) {
 void CEA::mate(PopulationStruct parent_A, PopulationStruct &parent_B, double mutaion_rate) {
     //crossover
     int crossposition = rand() % int(populationPropertiesSize);
+    double randbeta = getDoubleRand(-1, 1);
     for (int i = 0; i < crossposition; i++){
-        parent_B.populationProperties[i] = parent_A.populationProperties[i];
+        parent_B.populationProperties[i] = parent_A.populationProperties[i] + randbeta*(parent_B.populationProperties[i]-parent_A.populationProperties[i]);
     }
     //mutate
     if (rand() < int(mutaion_rate * RAND_MAX)){

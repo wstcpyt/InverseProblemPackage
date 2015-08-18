@@ -4,7 +4,7 @@
 #include "GeneticAlgorithmCore/GeneticAlgorithm.h"
 #include "TikhonovSVDCore/TikhonovSVD.h"
 #define POPULATIONNUMBERLENGTHPERTHREAD 10
-#define NUMBEROFTHREAD 30
+#define NUMBEROFTHREAD 6
 #include <gsl/gsl_vector.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_blas.h>
@@ -112,9 +112,12 @@ void printBestValue(CEA::PopulationVector population){
     sort(tournamentVector.begin(), tournamentVector.end(),
          [](CEA::PopulationStruct x, CEA::PopulationStruct y){ return x.fitness < y.fitness; });
     cout << "Best: " << " "  << " (" << tournamentVector[0].fitness << ") ";
+    double SD = 0;
     for (int i = 0; i < tournamentVector[0].populationProperties.size(); i++){
+        SD += pow(tournamentVector[0].populationProperties[i], 2.0);
         cout << tournamentVector[0].populationProperties[i] << " ";
     }
+    cout << "(" << SD << ")";
     cout << endl;
 }
 
@@ -181,7 +184,7 @@ void calculateCEA(){
     srand(unsigned(time(NULL)));
     vector<double> populationProperties(3, 0.0);
     CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
-    cea.initIndividual(-1, 1, 100);
+    cea.initIndividual(-1, 1, 10000);
     FitessSVDFuncCEA fitessSVDFunc;
     for (int loop = 0; loop < 1000; loop++){
         // for each node in the population
@@ -219,12 +222,11 @@ void calculateCEA(){
     }
 }
 void calculateCEAmultithreading(){
-    int numberofthread = 2;
     srand(unsigned(time(NULL)));
-    vector<double> populationProperties(40, 0.0);
+    vector<double> populationProperties(6, 0.0);
     CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
     cea.initIndividual(-0.1, 0.1, 10);
-    for (int loop = 0; loop < 1000; loop++){
+    for (int loop = 0; loop < 10000; loop++){
         // for each node in the population
         for (int i = 0; i < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; i++){
             vector<future<CEA>> futures{};
@@ -247,7 +249,7 @@ void calculateCEAmultithreading(){
             }
         }
 
-        writeToFiile(loop, cea.population);
+        //writeToFiile(loop, cea.population);
         printBestValue(cea.population);
     }
 }

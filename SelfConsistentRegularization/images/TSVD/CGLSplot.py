@@ -8,7 +8,7 @@ import numpy as np
 
 def plot_tsvd_plot(matrix_size):
     geophysics = GeoPhysicsBase(matrix_size, 0.25)
-    geophysics.g[0] = geophysics.g[0] + 0.0
+    geophysics.g[0] = geophysics.g[0]
     interation = CGLS(geophysics.A, geophysics.g)
     x = np.arange(matrix_size)
     plt.plot(x, geophysics.fexact, 'r', linewidth=2, label='pre defined f')
