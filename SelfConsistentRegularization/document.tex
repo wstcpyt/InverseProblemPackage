@@ -9,43 +9,25 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \begin{document}
-\title{Self Consistent ill-posed Inverse Pronlem With Cross Validation}
+\title{Self Consistent ill-posed Inverse Pronlem With Cross Validation and
+Cellular Evolutionary Algorithm}
 \maketitle
 
-\section{Introduction and Motivation}
-The mathematical term well-posed problem stems from a definition given by
-Jacques Hdamard. He believed that mathematical models of physical phenomena
-should have the properties that.
-\begin{enumerate} 
-  \item A solution exists.
-  \item The solution is unique.
-  \item The solution's behavior changes continuously with the initial
-  conditions.
-\end{enumerate}
-Problems that are not well-posed in the sense
-of Hadamard are termed ill-posed. Inverse problems are often ill-posed.
+\section{Introduction}
+In principle, ill-posed inverse problem with the regularization method can give
+out a very good reconstructed result, but in practice, this is not always the
+case. The main reason is that we apply our regularization method on the basis of
+the given, noisy measured value.
 
-Continuum models must often be discretized in order to obtain a numerical
-solution, while solutions may be continuous with respect to the initial
-conditions, they may suffer from numerical instability when solved with finite
-precision, or with erros in the data. Even if a problem is well posed, it may
-still be ill-conditioned, meaning that a small error in the intial data can
-result in much larger errors in the answers.
-
-In order to solve the ill-posed problem, regularization method is introduced. A
-simple form of regularization applied to integral equations, generally termed
-Tikhonov regularization, is essentially a trade-off between fitting the data and
-reducing a norm of the solution. 
-
-Ill-posed inverse problem with the regularization method can give out a very
-good reconstructed result compared to the exact result, but only if the measured
-value and the model is accurate enough.
-
-In order to solve the ill-posed inverse problem which the measure value or the 
-model is not accurate enougth to give out a good reconstructed result, we
+In order to solve the ill-posed inverse problem
+which the measure value or the model is not accurate enougth to give out a good reconstructed result, we
 introduce the self consistent regularization method With Cross Validation.
-
-\section{Regularization Methods at Work: A Model Problem from Geophysics}
+\section{Methodology}
+\subsection{Fredholm integral equation of the first kind}
+\subsection{Tikhonov Regularization}
+\subsection{Generalized Cross Validation}
+\subsection{Cellular Evolutionary Algorithm}
+\section{Numerical Results and Discussion}
 We use a very simple model to illustrate how we use regularization method to
 solve the ill-posed inverse problem. We use a simplified problem from gravity
 surveying. An unknown mass distribution with density \(f(t)\) is located at
