@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{arfken2013mathematical}
+George~B Arfken.
+\newblock {\em Mathematical methods for physicists}.
+\newblock Academic press, 2013.
+
+\bibitem{hackbusch2012integral}
+Wolfgang Hackbusch.
+\newblock {\em Integral equations: theory and numerical treatment}, volume 120.
+\newblock Birkh{\"a}user, 2012.
+
 \bibitem{hansen2010discrete}
 Per~Christian Hansen.
 \newblock {\em Discrete inverse problems: insight and algorithms}, volume~7.
@@ -9,5 +19,16 @@ Per~Christian Hansen.
 Alfons~G Hoekstra, Jiri Kroc, and Peter~MA Sloot.
 \newblock {\em Simulating complex systems by cellular automata}.
 \newblock Springer, 2010.
+
+\bibitem{neumaier1998solving}
+Arnold Neumaier.
+\newblock Solving ill-conditioned and singular linear systems: A tutorial on
+  regularization.
+\newblock {\em SIAM review}, 40(3):636--666, 1998.
+
+\bibitem{trefethen1997numerical}
+Lloyd~N Trefethen and David Bau~III.
+\newblock {\em Numerical linear algebra}, volume~50.
+\newblock Siam, 1997.
 
 \end{thebibliography}

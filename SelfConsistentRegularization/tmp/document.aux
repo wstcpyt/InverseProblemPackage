@@ -1,43 +1,61 @@
 \relax 
+\citation{arfken2013mathematical}
+\citation{hackbusch2012integral}
+\citation{neumaier1998solving}
+\citation{trefethen1997numerical}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Fredholm integral equation of the first kind}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Tikhonov Regularization}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Cellular Evolutionary Algorithm}{2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Numerical Results and Discussion}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The geometry of the gravity surveying model problem: \relax $f(t)\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} is the mass density at \relax $t\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}. and g(s) is the vertical component of the gravity field at s.\relax }}{2}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:GeophysicsIllustrator}{{1}{2}}
-\newlabel{eq:integralequation}{{6}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Discretization of Liner Inverse Problems: Quadrature Methods}{3}}
-\newlabel{fig:f(t)}{{2a}{4}}
-\newlabel{sub@fig:f(t)}{{a}{4}}
-\newlabel{fig:g(s)}{{2b}{4}}
-\newlabel{sub@fig:g(s)}{{b}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) shows the function f(the mass density distribution), and (b) shows the measured signal g (the gravity field) for three different values of the depth d in Figure. 1\hbox {}\relax }}{4}}
-\newlabel{fig:geoexact}{{2}{4}}
+\newlabel{eq:firsttypeintegral}{{1}{1}}
+\newlabel{eq:discreteintegral}{{2}{1}}
 \citation{hansen2010discrete}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The Singular Value Decompostion}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}SVD Analysis and the Discrete Picard Condition}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Truncated SVD}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Tikhonov Regularization}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Fitness of the Reconstruction: Generalized Cross Validation}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The Picard plots for the discretized gravity surveing problem with different noise level. (a) With no added noise (only discretization noise). (b) With an addional white noised added to the measured g (1E-4 random white noise)\relax }}{6}}
-\newlabel{fig:picard_plot}{{3}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces TSVD f reconstruction\relax }}{7}}
-\newlabel{fig:tsvd_plot}{{4}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tikhonov Regularization f reconstruction\relax }}{8}}
-\newlabel{fig:tikhonov_plot}{{5}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 4 generation of CEA simulation fitness map, we come to the exact de noise measurement of only 2 generation\relax }}{9}}
-\newlabel{fig:ceasimulation1}{{6}{9}}
-\newlabel{eq:disintegral}{{14}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Self Consistent Regularization With Cross Validation}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Cellular Evolutionary Algorithm}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evolutionary Algorithms}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Singular Value Decomposition (SVD) analysis and Picard condition}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Regularization Method}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Truncated Singular Value Decomposition}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Tikhonov Regularization}{2}}
+\newlabel{eq:tikhonovreqularization}{{7}{2}}
+\citation{hoekstra2010simulating}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Noise Analysis}{3}}
+\newlabel{eq:discrepancy}{{9}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Cellular Evolutionary Algorithm}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Numerical Results and Discussion}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The geometry of the gravity surveying model problem: \relax $f(t)\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} is the mass density at \relax $t\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}. and g(s) is the vertical component of the gravity field at s.\relax }}{4}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:GeophysicsIllustrator}{{1}{4}}
+\newlabel{eq:integralequation}{{10}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Discretization of Liner Inverse Problems: Quadrature Methods}{4}}
+\newlabel{fig:f(t)}{{2a}{5}}
+\newlabel{sub@fig:f(t)}{{a}{5}}
+\newlabel{fig:g(s)}{{2b}{5}}
+\newlabel{sub@fig:g(s)}{{b}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) shows the function f(the mass density distribution), and (b) shows the measured signal g (the gravity field) for three different values of the depth d in Figure. 1\hbox {}\relax }}{5}}
+\newlabel{fig:geoexact}{{2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The Singular Value Decompostion}{6}}
+\citation{hansen2010discrete}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}SVD Analysis and the Discrete Picard Condition}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Truncated SVD}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Tikhonov Regularization}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Fitness of the Reconstruction: Generalized Cross Validation}{7}}
+\newlabel{eq:disintegral}{{18}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Self Consistent Regularization With Cross Validation}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Cellular Evolutionary Algorithm}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evolutionary Algorithms}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The Picard plots for the discretized gravity surveing problem with different noise level. (a) With no added noise (only discretization noise). (b) With an addional white noised added to the measured g (1E-4 random white noise)\relax }}{8}}
+\newlabel{fig:picard_plot}{{3}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces TSVD f reconstruction\relax }}{9}}
+\newlabel{fig:tsvd_plot}{{4}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tikhonov Regularization f reconstruction\relax }}{10}}
+\newlabel{fig:tikhonov_plot}{{5}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 4 generation of CEA simulation fitness map, we come to the exact de noise measurement of only 2 generation\relax }}{11}}
+\newlabel{fig:ceasimulation1}{{6}{11}}
 \citation{hoekstra2010simulating}
 \bibdata{mybib}
-\bibcite{hansen2010discrete}{1}
-\bibcite{hoekstra2010simulating}{2}
+\bibcite{arfken2013mathematical}{1}
+\bibcite{hackbusch2012integral}{2}
+\bibcite{hansen2010discrete}{3}
+\bibcite{hoekstra2010simulating}{4}
+\bibcite{neumaier1998solving}{5}
+\bibcite{trefethen1997numerical}{6}
 \bibstyle{plain}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Representation}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Genetic Operators}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Representation}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Genetic Operators}{12}}

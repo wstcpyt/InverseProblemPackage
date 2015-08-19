@@ -23,31 +23,140 @@ which the measure value or the model is not accurate enougth to give out a good 
 introduce the self consistent regularization method With Cross Validation.
 \section{Methodology}
 \subsection{Fredholm integral equation of the first kind}
-\subsection{Tikhonov Regularization}
+A Fredholm integral equation of the first kind is an integral equation of the
+form.
 \begin{equation}
-x = {A^{ - 1}}b = \sum\limits_{i = 1}^n {\frac{{u_i^Tb}}{{{\sigma _i}}}{v_i}}
+f(x) = \int\limits_a^b {K(x,t)\phi (t)dt}
+\label{eq:firsttypeintegral}
 \end{equation}
+Where \(K(x,t)\) if the kerel and \(\phi (t)\) is an unknown function to be
+solved for \cite{arfken2013mathematical}.
+
+The first step to obtain a numerical solution of Eq.\ref{eq:firsttypeintegral}
+is to change the integral equation to matrix form by applying discretization
+method. There are two basically different approaches (Quadrature Methods and
+Expansion Methods) to do this \cite{hackbusch2012integral}. In this work, we use
+quadrature methos for simplicity and easy to implement.
+
+After the discretization, Eq.\ref{eq:firsttypeintegral} becomes a linear system.
 \begin{equation}
-u_i^Tb = u_i^T({b^{exact}} + e) = u_i^T{b^{exact}} + u_i^Te,\begin{array}{*{20}{c}}
-{i = 1,...,n}&{}
+Ax = b
+\label{eq:discreteintegral}
+\end{equation}
+The elements of the matrix A, the right-hand sized b, and the solution vector x
+are given by
+\begin{equation}
+\left. {\begin{array}{*{20}{c}}
+{{a_{ij}} = {\omega _j}K({x_i},{t_j})}\\
+{{x_j} = \tilde \phi ({t_j})}\\
+{{b_i} = f({x_i})}
+\end{array}} \right\}\begin{array}{*{20}{c}}
+{}&{i,j = 1,...,n.}
 \end{array}
 \end{equation}
-If all the elements \({e_i}\) of e are uncorrelated and from the same uniform
-distribution in the interval \([ - \sqrt 3 \eta ,\sqrt 3 \eta ]\). Then
-\[\varepsilon ({e_i}) = 0,\begin{array}{*{20}{c}}
-{\varepsilon (e_i^2) = {\eta ^2},}&{\varepsilon (\left| {{e_i}} \right|) = \frac{{\sqrt 3 }}{2}\eta }
+It is known that linear system arising from the first kind Fredholm integral
+equation such as Eq.\ref{eq:firsttypeintegral} are likely to be ill-conditioned
+\cite{neumaier1998solving}.
+\subsection{Singular Value Decomposition (SVD) analysis and Picard condition}
+The singluar value decomposition (SVD) is a very powerful tool for analyzing
+first kind Fredholm integral equation in the
+discrete setting as shown in
+Eq.\ref{eq:discreteintegral}\cite{trefethen1997numerical}.
+
+In this work, we treat the matrix A as a square matrix \(A \in {R^{N \times
+N}}\), and therefore the SVD of A takes the form
+\begin{equation}
+A = U\sum {V^T} = \sum\limits_{i = 1}^N {{u_i}{\sigma _i}v_i^T} 
+\end{equation}
+where \(\sum  \in {R^{N \times N}}\) is a diagonal matrix with the singular
+values, satisfying
+\[\sum  = diag({\sigma _1},...,{\sigma _n}),\begin{array}{*{20}{c}}
+{}&{{\sigma _1} \ge {\sigma _2} \ge  \cdots  \ge {\sigma _n} \ge 0}
 \end{array}\]
+The matrix \(U \in {R^{n \times n}}\) and \(V \in {R^{n \times n}}\) consist of
+the left and right singular vectors
+\[U = ({u_1},...,{u_N}),\begin{array}{*{20}{c}}
+{}&{V = ({v_1},...,{v_N})}
+\end{array}\]
+After we have performed SVD on the matrix A, the solution of x in
+Eq.\ref{eq:discreteintegral} takes the form
 \begin{equation}
-Cov(e) \equiv \varepsilon ((e - \varepsilon (e)){(e - \varepsilon (e))^T}) =
-\varepsilon (e{e^T}) = {\eta ^2}I
+x = {A^{ - 1}}b = \sum\limits_{i = 1}^N {\frac{{u_i^Tb}}{{{\sigma _i}}}{v_i}}
 \end{equation}
+For a stable solution x to exist, the right-hand side coefficients \(u_i^Tb\)
+must decay to zero faster than the singular values \({\sigma _i}\), a situation
+that is referred to as the Picard condition. The violation of the Picard
+condition is the simple explanation of the instablility of the inverse problem,
+but it also gives a way to deal with it, by employing the regularization method.
+\subsection{Regularization Method}
+\subsubsection{Truncated Singular Value Decomposition}
+From the discussion in the previous section, we compute a regularized
+approximate solution by simply eliminating those SVD componets where the
+\(u_i^Tb\) decay to zero more slowly than the sinular values \({\sigma _i}\).
+Hence we define the truncated SVD (TSVD) solution obtained by:
 \begin{equation}
-k < {k_\eta }:\left\| {A{x_k} - b} \right\| \approx \sum\limits_{i = k +
-1}^{{k_\eta }} {{{(u_i^Tb)}^2} + (n - {k_\eta }){\eta ^2} \approx \sum\limits_{i = k + 1}^{{k_\eta }} {{{(u_i^T{b^{exact}})}^2}} } 
+{x_k} = \sum\limits_{i = 1}^k {\frac{{u_i^Tb}}{{{\sigma _i}}}{v_i}}
 \end{equation}
+The truncation parameter k should be choosen such taht all the noise-dominated
+SVD coefficients are discarded. The value of k can be found from an inspection
+of the Picard plot.
+\subsubsection{Tikhonov Regularization}
+TSVD method is very intutitive. The disadvantage is thart it explicityly
+requires the computation of the SVD. This computation task can be too
+overwhelming for large-scale problems. Therefore, we need another regularization
+method which is suited for large computational problem which is the Tikhonov
+Regularization mehtod.
+
+The Tikhonov solution \({x_\lambda }\) is defined as the solution to the problem
 \begin{equation}
-k > {k_\eta }:\left\| {A{x_k} - b} \right\|_2^2 \approx (n - k){\eta ^2}
+\mathop {\min }\limits_x \left\{ {\left\| {Ax - b} \right\|_2^2 + {\lambda
+^2}\left\| x \right\|_2^2} \right\}
+\label{eq:tikhonovreqularization}
 \end{equation}
+
+where, the first term \(\left\| {Ax - b} \right\|_2^2\) measures the
+goodness-of-fit, and the second term \(\left\| x \right\|_2^2\) measures the
+regularity of the solution. The balance between the two terms is controlled by
+the factor \({\lambda ^2}\).
+
+The solution of Eq.\ref{eq:tikhonovreqularization} cam also be rewritten as
+follows in terms of the SVD \cite{hansen2010discrete}.
+
+\begin{equation}
+{x_\lambda } = \sum\limits_{i = 1}^n {\varphi _i^{[\lambda
+]}\frac{{u_i^Tb}}{{{\sigma _i}}}{v_i}}
+\end{equation}
+where \(\varphi _i^{[\lambda ]}\) is the filter factors and takes the form
+\[\varphi _i^{[\lambda ]} = \frac{{\sigma _i^2}}{{\sigma _i^2 + {\lambda ^2}}} \approx \left\{ {\begin{array}{*{20}{c}}
+1&{{\sigma _i} \gg \lambda }\\
+{\sigma _i^2/{\lambda ^2}}&{{\sigma _i} \ll \lambda }
+\end{array}} \right.\]
+
+\subsection{Noise Analysis}
+Assuming all the error comes from the Eq.\ref{eq:discreteintegral} is from the
+right hand side b
+\[b = {b^{exact}} + e\]
+assuming e is a white noise.
+
+In order to solve the Eq.\ref{eq:tikhonovreqularization} with the noise biased
+right hand side b, we need to choose the factor \(\lambda \). The Discrepancy
+Principle \cite{hoekstra2010simulating} shows that we should choose the factor
+\(\lambda \) such that the residual norm \({\left\| {A{x_\lambda } - b}
+\right\|_2}\) equals the ``discrepancy'' in the data, as measured by
+\({v_{dp}}{\left\| e \right\|_2}\), where \({v_{dp}}\) is the ``safety factor''.
+\begin{equation}
+{\left\| {A{x_\lambda } - b} \right\|_2} = {v_{dp}}{\left\| e \right\|_2}
+\label{eq:discrepancy}
+\end{equation}
+
+From Eq.\ref{eq:discrepancy}, we know that the goodness-of-fit of the problem is
+dependent on the error from the right hand side b. The larger the error, the
+worse the fit. This is the main challenge of using regularized method to solve
+the inverse problem. If the error from the right hand side is too large, we can
+only choose a relative large \(\lambda \) to discard the noise-dominated part,
+which also discard large amound of useful information to reconstruct x.
+
+
 \subsection{Cellular Evolutionary Algorithm}
 \section{Numerical Results and Discussion}
 We use a very simple model to illustrate how we use regularization method to
