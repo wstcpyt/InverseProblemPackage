@@ -36,6 +36,7 @@ double CEA::getDoubleRand(double rand_min, double rand_max) {
     return rand_min + randTemp * (rand_max - rand_min);
 }
 
+
 vector<CEA::PopulationStruct> CEA::produceOffSpring(int x, int y) {
     //select individuals in the neiberhood
     //up offspring
@@ -71,9 +72,10 @@ vector<CEA::PopulationStruct> CEA::produceOffSpring(int x, int y) {
 void CEA::mate(PopulationStruct parent_A, PopulationStruct &parent_B, double mutaion_rate) {
     //crossover
     int crossposition = rand() % int(populationPropertiesSize);
-    double randbeta = getDoubleRand(-1, 1);
+    double randTemp = (double)(rand() % int(randBase) / randBase);
+    double randbeta = 0 + randTemp * (1 - 0);
     for (int i = 0; i < crossposition; i++){
-        parent_B.populationProperties[i] = parent_A.populationProperties[i] + randbeta*(parent_B.populationProperties[i]-parent_A.populationProperties[i]);
+        parent_B.populationProperties[i] = parent_B.populationProperties[i] + randbeta*(parent_A.populationProperties[i]-parent_B.populationProperties[i]);
     }
     //mutate
     if (rand() < int(mutaion_rate * RAND_MAX)){

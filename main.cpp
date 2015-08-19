@@ -150,6 +150,29 @@ public:
 
 };
 
+class FitessSVDFuncCEAutb{
+public:
+    FitessSVDFuncCEAutb(){
+
+    }
+    template<typename T>
+    double singlepopulationfitness(T singlepopulation){
+        vector<double> blist {};
+        for (double propertiesvalue:singlepopulation.populationProperties){
+            blist.push_back(propertiesvalue);
+        }
+        GeoMeasure geoMeasure(blist);
+        TikhonovSVD tikhonovSVD(geoMeasure.A, geoMeasure.b);
+        tikhonovSVD.doSVDdecomposition();
+        double sumutb = 0;
+        for (size_t i = 0; i < MATRIXSIZE; i++){
+            sumutb += fabs(gsl_vector_get(tikhonovSVD.utb, i));
+        }
+        return sumutb;
+    }
+
+};
+
 void singlegenerationprocess(int i, int j, CEA& cea){
     FitessSVDFuncCEA fitessSVDFunc;
     //evaluate individual at node
@@ -184,7 +207,7 @@ void calculateCEA(){
     srand(unsigned(time(NULL)));
     vector<double> populationProperties(3, 0.0);
     CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
-    cea.initIndividual(-1, 1, 10000);
+    cea.initIndividual(-0.1, 0.1, 100);
     FitessSVDFuncCEA fitessSVDFunc;
     for (int loop = 0; loop < 1000; loop++){
         // for each node in the population
@@ -223,9 +246,9 @@ void calculateCEA(){
 }
 void calculateCEAmultithreading(){
     srand(unsigned(time(NULL)));
-    vector<double> populationProperties(6, 0.0);
+    vector<double> populationProperties(3, 0.0);
     CEA cea(populationProperties, POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD);
-    cea.initIndividual(-0.1, 0.1, 10);
+    cea.initIndividual(-0.1, 0.1, 1000);
     for (int loop = 0; loop < 10000; loop++){
         // for each node in the population
         for (int i = 0; i < POPULATIONNUMBERLENGTHPERTHREAD*NUMBEROFTHREAD; i++){
@@ -255,6 +278,6 @@ void calculateCEAmultithreading(){
 }
 
 int main() {
-    calculateCEAmultithreading();
+    calculateCEA();
     return 0;
 }

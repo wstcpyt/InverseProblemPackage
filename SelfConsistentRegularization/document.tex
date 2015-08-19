@@ -9,8 +9,7 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \begin{document}
-\title{Self Consistent ill-posed Inverse Pronlem With Cross Validation and
-Cellular Evolutionary Algorithm}
+\title{Self Consistent ill-posed Inverse Pronlem With Evolutionary Algorithm}
 \maketitle
 
 \section{Introduction}
@@ -25,7 +24,30 @@ introduce the self consistent regularization method With Cross Validation.
 \section{Methodology}
 \subsection{Fredholm integral equation of the first kind}
 \subsection{Tikhonov Regularization}
-\subsection{Generalized Cross Validation}
+\begin{equation}
+x = {A^{ - 1}}b = \sum\limits_{i = 1}^n {\frac{{u_i^Tb}}{{{\sigma _i}}}{v_i}}
+\end{equation}
+\begin{equation}
+u_i^Tb = u_i^T({b^{exact}} + e) = u_i^T{b^{exact}} + u_i^Te,\begin{array}{*{20}{c}}
+{i = 1,...,n}&{}
+\end{array}
+\end{equation}
+If all the elements \({e_i}\) of e are uncorrelated and from the same uniform
+distribution in the interval \([ - \sqrt 3 \eta ,\sqrt 3 \eta ]\). Then
+\[\varepsilon ({e_i}) = 0,\begin{array}{*{20}{c}}
+{\varepsilon (e_i^2) = {\eta ^2},}&{\varepsilon (\left| {{e_i}} \right|) = \frac{{\sqrt 3 }}{2}\eta }
+\end{array}\]
+\begin{equation}
+Cov(e) \equiv \varepsilon ((e - \varepsilon (e)){(e - \varepsilon (e))^T}) =
+\varepsilon (e{e^T}) = {\eta ^2}I
+\end{equation}
+\begin{equation}
+k < {k_\eta }:\left\| {A{x_k} - b} \right\| \approx \sum\limits_{i = k +
+1}^{{k_\eta }} {{{(u_i^Tb)}^2} + (n - {k_\eta }){\eta ^2} \approx \sum\limits_{i = k + 1}^{{k_\eta }} {{{(u_i^T{b^{exact}})}^2}} } 
+\end{equation}
+\begin{equation}
+k > {k_\eta }:\left\| {A{x_k} - b} \right\|_2^2 \approx (n - k){\eta ^2}
+\end{equation}
 \subsection{Cellular Evolutionary Algorithm}
 \section{Numerical Results and Discussion}
 We use a very simple model to illustrate how we use regularization method to

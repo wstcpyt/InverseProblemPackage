@@ -8,7 +8,9 @@ import numpy as np
 
 def plot_picard_plot(matrix_size):
     geophysics = GeoPhysicsBase(matrix_size, 0.25)
-    noise = np.random.normal(0,0.0001, matrix_size)
+    noise = np.random.normal(0,1E-4, matrix_size)
+    for i in range(3, matrix_size):
+        noise[i] = 0
     g = geophysics.g + noise
     svdregularization = SVDRegularization(geophysics.A, g)
     s, utb, utbs = svdregularization.get_picatd_parameter()

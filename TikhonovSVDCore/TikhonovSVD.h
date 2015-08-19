@@ -11,16 +11,15 @@ class TikhonovSVD{
     gsl_matrix* VMatrix;
     gsl_vector* SVector;
     gsl_vector* workVector;
-    gsl_vector* utb;
     gsl_vector* utbs;
     vector<double> phivector;
 public:
+    gsl_vector* utb;
     gsl_vector* XTikhonovSVD;
     TikhonovSVD(gsl_matrix* &A_matrix, gsl_vector* &b_vector);
     ~TikhonovSVD();
     void getXtikhonovSVD(double lambdavalue);
     double getGCVValue(gsl_matrix* &A_matrix, gsl_vector* &b_vector, gsl_vector* &x_vector);
-private:
     void doSVDdecomposition();
 };
 #endif //INVERSEPROBLEM_TIKHONOVSVD_H
