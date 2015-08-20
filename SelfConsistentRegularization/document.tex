@@ -156,8 +156,26 @@ the inverse problem. If the error from the right hand side is too large, we can
 only choose a relative large \(\lambda \) to discard the noise-dominated part,
 which also discard large amound of useful information to reconstruct x.
 
-
-\subsection{Cellular Evolutionary Algorithm}
+In order to solve the problem when the noise from the right hand side b cannot
+be ignored, we introduced a self consistent denoise technique to pre filter the
+noise. We will search the space \(b \pm \eta \), where \(\eta \) is the standard
+deviation of the white noise as shown in Fig.\ref{fig:bsearchspace}, and find
+the combination can give us the least residual \({\left\| {A{x_\lambda } - b} \right\|_2}\) to form the new b which
+is very close to \({b^{exact}}\).
+Then we can feed the new b into the regularization process, which can give us a better reconstruct result.
+ \begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.7\textwidth]{images/bsearchspace/bsearchspace}
+  \caption{The search space for \({b^{exact}}\), the black line is the measured
+  b with noise, the red region is the search sapce, with a width \(2\eta \)}
+  \label{fig:bsearchspace}
+\end{figure}
+Since the search space is a continuous space and can be very large, there is no
+way to use brute force, or normal search algorithm to search the noise space.
+We need to use a stochastic search algorithm. Evolutionary Algorithm is the most
+famous stochastic search algorithm. In this work we use it to search the noise
+space and find the least residual \({\left\| {A{x_\lambda } - b} \right\|_2}\).
+\subsection{Evolutionary Algorithm}
 \section{Numerical Results and Discussion}
 We use a very simple model to illustrate how we use regularization method to
 solve the ill-posed inverse problem. We use a simplified problem from gravity
